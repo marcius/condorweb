@@ -1,0 +1,1687 @@
+2010/05/10 18:17:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bilancio/index".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php:324
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/index')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#2 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=bilancio/index
+2010/05/10 19:11:40 [warning] [application] Failed to set unsafe attribute "id_bilancio".
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (145)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/10 19:17:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewYear".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:439
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(262): CController->missingAction('viewYear')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#4 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/10 19:17:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewYear".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:439
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(262): CController->missingAction('viewYear')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#4 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/21 21:18:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/21 21:19:28 [error] [exception.CException] exception 'CException' with message 'BilancioController cannot find the requested view "viewYear".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:757
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): CController->renderPartial('viewYear', Array, true)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(187): CController->render('viewYear', Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/21 21:19:30 [error] [exception.CException] exception 'CException' with message 'BilancioController cannot find the requested view "viewYear".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:757
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): CController->renderPartial('viewYear', Array, true)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(187): CController->render('viewYear', Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/21 21:20:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:439
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(262): CController->missingAction('show')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('show')
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/show')
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#4 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=bilancio/show
+2010/05/21 21:24:18 [error] [exception.CException] exception 'CException' with message 'BilancioController cannot find the requested view "viewYear".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php:757
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): CController->renderPartial('viewYear', Array, true)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(187): CController->render('viewYear', Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/05/26 19:25:12 [error] [php] require(Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory (Z:\Dev\www\yii-1.1.2.r2086\framework\YiiBase.php:257)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(173): BilancioController->createWidget()
+#1 Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php(60): BilancioController->widget()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): BilancioController->renderInternal()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#6 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(187): BilancioController->render()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#15 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#17 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#18 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#19 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php (60)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (187)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/26 19:26:26 [error] [php] require(Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory (Z:\Dev\www\yii-1.1.2.r2086\framework\YiiBase.php:257)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(173): BilancioController->createWidget()
+#1 Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php(75): BilancioController->widget()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): BilancioController->renderInternal()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#6 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(189): BilancioController->render()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#15 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#17 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#18 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#19 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php (75)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (189)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/26 19:28:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274894882046&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/26 21:46:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274903174620&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/26 21:46:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274903187830&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/26 21:47:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on 'localhost' (10061)' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php:267
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(242): CDbConnection->open()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(221): CDbConnection->setActive(true)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CModule.php(363): CDbConnection->init()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(391): CModule->getComponent('db')
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(542): CApplication->getDb()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(1975): CActiveRecord->getDbConnection()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(342): CActiveRecordMetaData->__construct(Object(Bilancio))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(132): CActiveRecord::model('Bilancio')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(174): CActiveDataProvider->calculateTotalItemCount()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(97): CDataProvider->getTotalItemCount()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(120): CActiveDataProvider->fetchData()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CBaseListView.php(99): CDataProvider->getData()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CListView.php(151): CBaseListView->init()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(148): CListView->init()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 Z:\Dev\www\ycond\protected\views\bilancio\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require('Z:\Dev\www\ycon...')
+#17 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): CBaseController->renderInternal('Z:\Dev\www\ycon...', Array, true)
+#18 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): CBaseController->renderFile('Z:\Dev\www\ycon...', Array, true)
+#19 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): CController->renderPartial('index', Array, true)
+#20 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(135): CController->render('index', Array)
+#21 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionIndex()
+#22 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#23 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#24 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#25 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#26 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#27 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#28 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#29 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('index')
+#31 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/index')
+#32 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#33 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#34 {main} REQUEST_URI=/index.php?r=bilancio/index
+2010/05/27 00:49:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+2010/05/27 00:49:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+2010/05/27 00:50:47 [error] [php] include(StatisticsSQLHelper.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\Dev\www\yii-1.1.2.r2086\framework\YiiBase.php:338)
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(196): spl_autoload_call()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (196)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:52:44 [error] [php] include(StatisticsSQLHelper.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\Dev\www\yii-1.1.2.r2086\framework\YiiBase.php:338)
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(196): spl_autoload_call()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (196)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:53:59 [error] [php] include(U.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\Dev\www\yii-1.1.2.r2086\framework\YiiBase.php:338)
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php(8): spl_autoload_call()
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(196): createStmt_RiepilogoPatrimoniale()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (8)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (196)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:54:59 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:54:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+2010/05/27 00:56:20 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:56:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale
+2010/05/27 00:59:15 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1 and year(data_pagam) = undefined
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:59:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1 and year(data_pagam) = undefined' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274914755317&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/27 00:59:16 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1 and year(data_pagam) = undefined
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:59:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1 and year(data_pagam) = undefined' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274914756535&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/27 00:59:17 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1 and year(data_pagam) = undefined
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 00:59:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1 and year(data_pagam) = undefined' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=undefined&_search=false&nd=1274914757368&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/27 01:00:30 [error] [system.db.CDbCommand] Error in querying SQL: select tipo_transazione, id_cassa, sum(importo) sum_importo
+            from transazioni
+            group by tipo_transazione, id_cassa
+            where 1=1 and year(data_pagam) = 2009
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (197)
+in Z:\Dev\www\ycond\index.php (12)
+2010/05/27 01:00:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where 1=1 and year(data_pagam) = 2009' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(246): CDbCommand->queryInternal('', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(197): CDbCommand->query()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionJsonRiepilogoPatrimoniale()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('jsonRiepilogoPa...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/jsonRi...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/jsonRiepilogoPatrimoniale&anno=2009&undefined&_search=false&nd=1274914830582&rows=-1&page=1&sidx=tipo_transazione&sord=desc
+2010/05/31 22:31:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "statistics/viewAccountCustFilter".' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php:324
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('statistics/view...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#2 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#3 {main} REQUEST_URI=/index.php?r=statistics/viewAccountCustFilter
+2010/06/04 11:08:29 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] Impossibile stabilire la connessione. Risposta non corretta dell (trying to connect via tcp://localhost:3306) (Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php:302)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(242): CDbConnection->open()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(221): CDbConnection->setActive()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CModule.php(363): CDbConnection->init()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(391): CWebApplication->getComponent()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(542): CWebApplication->getDb()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(1975): Bilancio->getDbConnection()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(342): CActiveRecordMetaData->__construct()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(132): model()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(174): CActiveDataProvider->calculateTotalItemCount()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(97): CActiveDataProvider->getTotalItemCount()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(120): CActiveDataProvider->fetchData()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CBaseListView.php(99): CActiveDataProvider->getData()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CListView.php(151): CListView->init()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(148): CListView->init()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(173): BilancioController->createWidget()
+#15 Z:\Dev\www\ycond\protected\views\bilancio\index.php(18): BilancioController->widget()
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require()
+#17 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): BilancioController->renderInternal()
+#18 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#19 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#20 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(135): BilancioController->render()
+#21 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionIndex()
+#22 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#23 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#24 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#25 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#26 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#27 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#28 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#29 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#30 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#31 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#32 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#33 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/index
+in Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CBaseListView.php (99)
+in Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CListView.php (151)
+in Z:\Dev\www\ycond\protected\views\bilancio\index.php (18)
+2010/06/04 11:08:32 [error] [php] Undefined variable: nav (Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php:209)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): BilancioController->renderInternal()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#4 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(189): BilancioController->render()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#15 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#17 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php (209)
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php (69)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (189)
+2010/06/04 11:08:48 [error] [php] Undefined variable: nav (Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php:209)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): BilancioController->renderInternal()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#4 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(189): BilancioController->render()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#15 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#17 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\extensions\jqgrid\CJuiJqGrid.php (209)
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYear.php (69)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (189)
+2010/06/06 11:59:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on 'localhost' (10061)' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php:267
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(242): CDbConnection->open()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbConnection.php(221): CDbConnection->setActive(true)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CModule.php(363): CDbConnection->init()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(391): CModule->getComponent('db')
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(542): CApplication->getDb()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(1975): CActiveRecord->getDbConnection()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\db\ar\CActiveRecord.php(342): CActiveRecordMetaData->__construct(Object(Bilancio))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(132): CActiveRecord::model('Bilancio')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(174): CActiveDataProvider->calculateTotalItemCount()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CActiveDataProvider.php(97): CDataProvider->getTotalItemCount()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CDataProvider.php(120): CActiveDataProvider->fetchData()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CBaseListView.php(99): CDataProvider->getData()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\zii\widgets\CListView.php(151): CBaseListView->init()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(148): CListView->init()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 Z:\Dev\www\ycond\protected\views\bilancio\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(119): require('Z:\Dev\www\ycon...')
+#17 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CBaseController.php(88): CBaseController->renderInternal('Z:\Dev\www\ycon...', Array, true)
+#18 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): CBaseController->renderFile('Z:\Dev\www\ycon...', Array, true)
+#19 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): CController->renderPartial('index', Array, true)
+#20 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(135): CController->render('index', Array)
+#21 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionIndex()
+#22 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#23 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#24 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#25 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#26 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#27 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#28 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#29 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('index')
+#31 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/index')
+#32 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#33 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#34 {main} REQUEST_URI=/index.php?r=bilancio/index
+2010/06/06 23:32:22 [error] [system.db.CDbCommand] Error in querying SQL: select sum(importo) sum_importo, tipo_transazione, id_cassa
+            from transazioni
+            where 1=1 and tipo_transazione = :tipo_transazione and id_cassa = :id_cassa and anno_registrazione < :anno_registrazione group by tipo_transazione, id_cassa. Bind with parameter tipo_transazione=E, id_cassa=b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (193)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:32:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(193): CDbCommand->queryScalar(Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/06/06 23:33:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php:153
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\auth\CAccessControlFilter.php(115): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#11 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:37:31 [error] [system.db.CDbCommand] Error in querying SQL: select valore from bilanci where 1=1 and anno = 2008 and sezione = riep_cassa and voce = tot_cassa_b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (289)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:37:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'riep_cassa' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(289): CDbCommand->queryScalar()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:39:07 [error] [system.db.CDbCommand] Error in querying SQL: select valore from bilanci where 1=1 and anno = 2008 and sezione = riep_cassa and voce = tot_cassa_b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (289)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:39:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'riep_cassa' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(289): CDbCommand->queryScalar()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:39:34 [error] [system.db.CDbCommand] Error in executing SQL: delete from bilanci where anno = $anno
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (296)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:39:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$anno' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(296): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:40:34 [error] [system.db.CDbCommand] Error in executing SQL: delete from bilanci where anno = $anno
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (296)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:40:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$anno' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(296): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:43:43 [error] [system.db.CDbCommand] Error in executing SQL: delete from bilanci where anno = $anno
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (296)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:43:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$anno' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(296): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:43:50 [error] [system.db.CDbCommand] Error in executing SQL: delete from bilanci where anno = $anno
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (296)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:43:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$anno' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(296): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:44:35 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, riep_cassa sezione, concat('tot_tipo_cassa_', tipo_transazione, '_', id_cassa) voce, sum_importo valore from (
+        select tipo_transazione, id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione, id_cassa
+        ) s
+        union all
+        select 2009 anno, riep_cassa sezione, concat('tot_tipo_', tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (310)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:44:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'riep_cassa' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(310): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:45:04 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, riep_cassa sezione, concat('tot_tipo_cassa_', tipo_transazione, '_', id_cassa) voce, sum_importo valore from (
+        select tipo_transazione, id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione, id_cassa
+        ) s
+        union all
+        select 2009 anno, riep_cassa sezione, concat('tot_tipo_', tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (310)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:45:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'riep_cassa' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(310): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/06 23:45:23 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'riep_cassa' sezione, concat('tot_tipo_cassa_', tipo_transazione, '_', id_cassa) voce, sum_importo valore from (
+        select tipo_transazione, id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione, id_cassa
+        ) s
+        union all
+        select 2009 anno, riep_cassa sezione, concat('tot_tipo_', tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (310)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/06 23:45:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'riep_cassa' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(310): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 00:09:10 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2008 anno, 'riep_cassa' sezione, tot_cassa_b voce, sum_importo + ifnull(2451.16, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2008 and  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (301)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 00:09:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and id_cassa = 'b'
+        ) s' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(301): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 00:11:29 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2008 anno, 'riep_cassa' sezione, tot_cassa_b voce, sum_importo + ifnull(2451.16, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2008 and  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (301)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 00:11:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and id_cassa = 'b'
+        ) s' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(301): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 00:11:36 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2008 anno, 'riep_cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(2451.16, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2008 and  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (301)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 00:11:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and id_cassa = 'b'
+        ) s' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(301): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 00:14:16 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2008 anno, 'riep_cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(2451.16, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2008 and  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (301)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 00:14:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and id_cassa = 'b'
+        ) s' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(301): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 10:39:41 [error] [php] Undefined variable: where_p (Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php:20)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (20)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (225)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:46:03 [error] [php] Undefined variable: where_p (Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php:17)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (17)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (225)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:47:29 [error] [php] Undefined variable: where_p (Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php:17)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (17)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (225)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:48:08 [error] [php] Undefined variable: where_p (Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php:19)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (19)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (225)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:51:40 [error] [php] Use of undefined constant valore - assumed 'valore' (Z:\Dev\www\ycond\protected\controllers\BilancioController.php:227)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#10 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (227)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:53:05 [error] [php] Undefined variable: where_p (Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php:31)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\components\BilancioSQLHelper.php (31)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (240)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:53:57 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, concat(tot_tipo_, tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (246)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:53:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tot_tipo_' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(246): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 10:55:28 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, concat(tot_tipo_, tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (246)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:55:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tot_tipo_' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(246): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 10:55:59 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, concat(tot_tipo_, tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (246)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 10:55:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tot_tipo_' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(246): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:01:53 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, concat(tot_tipo_, tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and year(data_pagam) = 2009 group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (246)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:01:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tot_tipo_' in 'field list'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(246): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:01:53 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (250)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:01:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione ' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(250): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:01:53 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (250)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:01:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione ' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(250): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:02:02 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (250)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:02:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione ' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(250): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:06:04 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (250)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:06:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione ' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(250): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:08:25 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'cassa' sezione, 'tot_cassa_b' voce, sum_importo + ifnull(, 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where year(data_pagam) = 2009  and id_cassa = 'b'
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (250)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:08:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 0) valore from (
+        select id_cassa, sum(importo * case tipo_transazione ' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(250): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:25:23 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'pagam' sezione, concat('precnonpag_tipo_', tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and anno_registrazione < 2009 and (1=1 < and year(data_pagam) >= 2009 or year(data_pagam) is null) group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (268)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:25:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and year(data_pagam) >= 2009 or year(data_pagam) is null) group by tipo_transazi' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(268): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 11:27:46 [error] [system.db.CDbCommand] Error in executing SQL:         insert into bilanci (anno, sezione, voce, valore)
+        select 2009 anno, 'pagam' sezione, concat('precnonpag_tipo_', tipo_transazione) voce, sum_importo valore from (
+        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where 1=1  and anno_registrazione < 2009 and (1=1 < and year(data_pagam) >= 2009 or year(data_pagam) is null) group by tipo_transazione
+        ) s
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (268)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 11:27:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and year(data_pagam) >= 2009 or year(data_pagam) is null) group by tipo_transazi' at line 4' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(268): CDbCommand->execute()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 15:27:44 [error] [php] PDOStatement::execute() [<a href='pdostatement.execute'>pdostatement.execute</a>]: MySQL server has gone away (Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:214)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): actionCreateBilancio()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#12 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/createBilancio
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (288)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 15:28:26 [error] [system.db.CDbCommand] Error in querying SQL:         select sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where tipo_transazione = :tipo_transazione, id_cassa = :id_cassa  and year(data_pagam) = 2009 . Bind with parameter tipo_transazione=E, id_cassa=b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (245)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 15:28:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' id_cassa = 'b'  and year(data_pagam) = 2009' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(245): CDbCommand->queryScalar(Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 15:30:33 [error] [system.db.CDbCommand] Error in querying SQL:         select sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
+        from  transazioni where tipo_transazione = :tipo_transazione, id_cassa = :id_cassa  and year(data_pagam) = 2009 . Bind with parameter tipo_transazione=E, id_cassa=b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (245)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 15:30:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' id_cassa = 'b'  and year(data_pagam) = 2009' at line 2' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(245): CDbCommand->queryScalar(Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:47:42 [error] [system.db.CDbCommand] Error in querying SQL: . Bind with parameter tipo_transazione=E, id_cassa=b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (253)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:47:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(253): CDbCommand->queryScalar(Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:47:57 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:47:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:52:17 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:52:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:52:33 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:52:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:53:33 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:53:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:54:43 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:54:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:55:11 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (254)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:55:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(254): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:56:16 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (255)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:56:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(255): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 16:57:45 [error] [system.db.CDbCommand] Error in executing SQL: insert into bilanci (anno, sezione, voce, valore) values (:anno, :sezione, :voce, :valore). Bind with parameter anno=2009, sezione=cassa, voce=, valore=5722.03
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (255)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 16:57:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'voce' cannot be null' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:227
+Stack trace:
+#0 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(255): CDbCommand->execute(Array)
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#13 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#14 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 18:03:41 [error] [system.db.CDbCommand] Error in querying SQL: . Bind with parameter tipo_transazione=E, id_cassa=b
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (353)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 18:03:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(302): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(353): CDbCommand->queryScalar(Array)
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController::actionCreateBilancio()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('createBilancio')
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/create...')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#14 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#15 {main} REQUEST_URI=/index.php?r=bilancio/createBilancio
+2010/06/07 18:45:18 [error] [system.db.CDbCommand] Error in querying SQL: select voce, valore from bilanci where 1=1 and anno = 2009 and sezione = cassa
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (204)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (190)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 18:45:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cassa' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(265): CDbCommand->queryInternal('fetchAll', 2, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(204): CDbCommand->queryAll()
+#2 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(190): BilancioController->createBilancioArray('2009')
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#15 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/06/07 18:47:08 [error] [system.db.CDbCommand] Error in querying SQL: select voce, valore from bilanci where 1=1 and anno = 2009 and sezione = cassa
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (204)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (190)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/07 18:47:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cassa' in 'where clause'' in Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php:375
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\db\CDbCommand.php(265): CDbCommand->queryInternal('fetchAll', 2, Array)
+#1 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(204): CDbCommand->queryAll()
+#2 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(190): BilancioController->createBilancioArray('2009')
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CFilter->filter(Object(CFilterChain))
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): CController->run('viewYear')
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController('bilancio/viewYe...')
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#15 Z:\Dev\www\ycond\index.php(12): CApplication->run()
+#16 {main} REQUEST_URI=/index.php?r=bilancio/viewYear
+2010/06/07 18:47:11 [error] [php] Use of undefined constant voce - assumed 'voce' (Z:\Dev\www\ycond\protected\controllers\BilancioController.php:206)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#2 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#11 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (206)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (190)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/08 15:12:12 [error] [php] Use of undefined constant cassa - assumed 'cassa' (Z:\Dev\www\ycond\protected\views\bilancio\viewYearTest.php:17)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#2 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(194): BilancioController->render()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#15 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYearTest.php (17)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (194)
+in Z:\Dev\www\ycond\index.php (12)
+2010/06/08 15:20:38 [error] [php] Undefined index: pagam (Z:\Dev\www\ycond\protected\views\bilancio\viewYearTest.php:66)
+Stack trace:
+#0 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(748): BilancioController->renderFile()
+#1 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(687): BilancioController->renderPartial()
+#2 Z:\Dev\www\ycond\protected\controllers\BilancioController.php(194): BilancioController->render()
+#3 Z:\Dev\www\yii-1.1.2.r2086\framework\web\actions\CInlineAction.php(32): BilancioController->actionViewYear()
+#4 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(300): CInlineAction->run()
+#5 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(129): BilancioController->runAction()
+#6 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(999): CAccessControlFilter->filter()
+#8 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CInlineFilter.php(59): BilancioController->filterAccessControl()
+#9 Z:\Dev\www\yii-1.1.2.r2086\framework\web\filters\CFilterChain.php(126): CInlineFilter->filter()
+#10 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(283): CFilterChain->run()
+#11 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CController.php(257): BilancioController->runActionWithFilters()
+#12 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(320): BilancioController->run()
+#13 Z:\Dev\www\yii-1.1.2.r2086\framework\web\CWebApplication.php(120): CWebApplication->runController()
+#14 Z:\Dev\www\yii-1.1.2.r2086\framework\base\CApplication.php(135): CWebApplication->processRequest()
+#15 Z:\Dev\www\ycond\index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=bilancio/viewYear
+in Z:\Dev\www\ycond\protected\views\bilancio\viewYearTest.php (66)
+in Z:\Dev\www\ycond\protected\controllers\BilancioController.php (194)
+in Z:\Dev\www\ycond\index.php (12)
