@@ -1,7 +1,15 @@
 <?php
 class BilancioSQLHelper
 {                    
-    
+    public static function createStmt_GetBilanci()
+    {
+        $where_p = "";
+        $stmt = "SELECT distinct (anno_registrazione), count(*) num_transazioni"
+        . " FROM transazioni group by anno_registrazione order by anno_registrazione desc";
+        return $stmt;
+    }
+
+
     public static function createStmt_GetBilancio($anno, $sezione)
     {
         $where_p = "";                               
@@ -9,7 +17,8 @@ class BilancioSQLHelper
         $where_p .= U::addwhere("sezione", "=", $sezione, "string");   
         $stmt = "select voce, valore from bilanci where 1=1" . $where_p;
         return $stmt;
-    }    
+    }
+
     public static function createStmt_RiepilogoPatrimoniale($mode)
     {
         $where_p = "";
@@ -101,89 +110,50 @@ EOD;
         return $stmt;
     }
 
-/*
-
-
-
-      public static function createStmt_InsTotCassa($anno, $sezione, $voce, $idcassa, $totannoprec){
+    public static function createStmt_GetTot($anno, $sezione, $voce){
         $where_p = "";
-        $where_p .= U::addwhere("id_cassa", "=", $idcassa, "string");
-        $stmt = <<<EOD
-        insert into bilanci (anno, sezione, voce, valore)
-        select $anno anno, '$sezione' sezione, '$voce' voce, sum_importo + ifnull($totannoprec, 0) valore from (
-        select id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
-        from  transazioni where year(data_pagam) = $anno $where_p
-        ) s
-EOD;
-        return $stmt;
-    }
-
-    public static function createStmt_InsTotTipo($anno, $sezione, $voce){
-        $where_p = "";
-        if ($voce == "tot_tipo"){ //sezione = "riep_cassa"
-            $where_p .= U::addwhere("year(data_pagam)", "=", $anno);
-        } else if ($voce == "precnonpag_tipo"){ //sezione = "riep_pagam"
+        if ($voce == "saldogestioni_prec"){
             $where_p .= U::addwhere("anno_registrazione", "<", $anno);
-            $where_p .= " and (1=1 ";
-            $where_p .= U::addwhere("year(data_pagam)", ">=", $anno);
-            $where_p .= U::addwhere("year(data_pagam)", "is", "null", "", "or");
-            $where_p .= ")";
-        } else if ($voce == "nonpag_precnonpag_tipo"){ //sezione = "riep_pagam"
-            $where_p .= U::addwhere("anno_registrazione", "<", $anno);
-            $where_p .= " and (1=1 ";
-            $where_p .= U::addwhere("year(data_pagam)", ">", $anno);
-            $where_p .= U::addwhere("year(data_pagam)", "is", "null", "", "or");
-            $where_p .= ")";
-        } else if ($voce == "corr_tipo"){ //sezione = "riep_pagam"
-            $where_p .= U::addwhere("anno_registrazione", "=", $anno);
-        } else if ($voce == "nonpag_corr_tipo"){ //sezione = "riep_pagam"
-            $where_p .= U::addwhere("anno_registrazione", "=", $anno);
-            $where_p .= " and (1=1 ";
-            $where_p .= U::addwhere("year(data_pagam)", ">", $anno);
-            $where_p .= U::addwhere("year(data_pagam)", "is", "null", "", "or");
-            $where_p .= ")";
         } else {
             return "";
         }
         $stmt = <<<EOD
-        insert into bilanci (anno, sezione, voce, valore)
-        select $anno anno, '$sezione' sezione, concat('$voce', tipo_transazione) voce, sum_importo valore from (
-        select tipo_transazione, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
-        from  transazioni where 1=1 $where_p group by tipo_transazione
-        ) s
+        select sum(importo * case tipo_transazione when 'U' then -1 when 'E' then 1 else 0 end) sum_importo
+        from transazioni where 1=1 $where_p
 EOD;
         return $stmt;
     }
-    
-        public static function createStmt_InsTotTipoCassa($anno, $sezione, $voce)
-    {
-        $where_p = "";
-        if ($voce == "tot_tipo_cassa"){
-            $where_p .= U::addwhere("year(data_pagam)", "=", $anno);
-        } else if ($voce == "pag_precnonpag_tipo_cassa_"){//sezione = "riep_pagam"       
-            $where_p .= U::addwhere("anno_registrazione", "<", $anno);
-            $where_p .= U::addwhere("year(data_pagam)", "=", $anno);
-        } else if ($voce == "pag_corr_tipo_cassa_"){ //sezione = "riep_pagam"       
-            $where_p .= U::addwhere("anno_registrazione", "=", $anno);
-            $where_p .= U::addwhere("year(data_pagam)", "=", $anno);
-        } else {
-            return "";
-        }
-        $stmt = <<<EOD
-        insert into bilanci (anno, sezione, voce, valore)
-        select $anno anno, '$sezione' sezione, concat('$voce', tipo_transazione, '_', id_cassa) voce, sum_importo valore from (
-        select tipo_transazione, id_cassa, sum(importo * case tipo_transazione when 'U' then -1 else 1 end) sum_importo
-        from  transazioni where 1=1 $where_p group by tipo_transazione, id_cassa
-        ) s
-EOD;
-        return $stmt;
-    }
-    */
 
+    public static function createStmt_InsRiepCausaliCons($anno){
+        $where_p = "";
+        $where_p .= U::addwhere("anno_registrazione", "=", $anno);
+        $stmt = <<<EOD
+        insert into riep_causali (anno, sezione, tipo_transazione, id_causale, valore)
+        select $anno, "cons", tipo_transazione, id_causale, sum_importo from (
+            select id_causale, tipo_transazione, sum(importo) sum_importo
+            from transazioni where 1=1 $where_p  group by tipo_transazione, id_causale) s ;
+EOD;
+        return $stmt;
+    }
+
+    public static function createStmt_GetRiepCausali($anno){
+        $where_p = "";
+        $where_p .= U::addwhere("anno", "=", $anno);
+        $stmt = <<<EOD
+        SELECT ca.tipo, ca.descrizione, ifnull(p.valore, 0) preventivo, ifnull(c.valore, 0) consuntivo, (ifnull(p.valore, 0) - ifnull(c.valore, 0))*ca.segno*-1 saldo
+        from causali ca
+        left join (select * from riep_causali where sezione = "cons" $where_p) c on ca.id_causale = c.id_causale
+        left join (select * from riep_causali where sezione = "prev" $where_p) p on ca.id_causale = p.id_causale
+        where ca.tipo <> "G" order by ca.tipo, ca.descrizione;
+EOD;
+        return $stmt;
+    }
+
+        public static function createStmt_GetLastYear(){
+        $where_p = "";
+        $stmt = "SELECT max(anno_registrazione) anno from transazioni";
+        return $stmt;
+    }
     
 }
 ?>
-
-  
-  
-  

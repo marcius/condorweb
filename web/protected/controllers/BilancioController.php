@@ -32,11 +32,11 @@ class BilancioController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'viewYear', 'jsonRiepilogoPatrimoniale','createBilancio'),  
+				'actions'=>array('index'),  
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'viewYear'),
+				'actions'=>array('calcConsAnno', 'calcQuote','gestPrevAnno','visualizza'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -129,10 +129,11 @@ class BilancioController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Bilancio');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $dpBilanci = BilancioHelper::getDpBilanci();
+        $this->render('index', array(
+                'dpBilanci'=>$dpBilanci,
+                )
+        );
 	}
 
 	/**
@@ -179,34 +180,86 @@ class BilancioController extends Controller
 	}
     
           
-    public function actionViewYear()
+    public function actionVisualizza()
     {
-        Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/grid.css', 'all');
-        //Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/grid-print.css', 'print');
         $searchModel=new CommonSearch();
-        $searchModel->anno = "2009";
-        //U::q("anno")
-        $bilancio = BilancioHelper::creaArrayPerView($searchModel->anno);
-        $this->render('viewYearTest', array(
-                'searchModel'=>$searchModel,
-                'bilancio'=>$bilancio,
-                )
-        );
+        //if(isset($_GET['CommonSearch'])) {
+        if(isset(Yii::app()->session['anno'])) {
+            //$searchModel->attributes=$_GET['CommonSearch'];
+            $searchModel->anno=Yii::app()->session['anno'];
+        } else {
+            $searchModel->anno = "2007";
+        }
+
+        if($searchModel->validate())
+        {
+            $bilancio = BilancioHelper::creaArrayPerView($searchModel->anno);
+            $dpRiepCausali = BilancioHelper::getDpRiepCausali($searchModel->anno);
+            //Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/grid.css', 'all');
+            $this->render('viewYear', array(
+                    'searchModel'=>$searchModel,
+                    'bilancio'=>$bilancio,
+                    'dpRiepCausali'=>$dpRiepCausali,
+                    )
+            );
+        } else {
+    		$this->render('index',array());
+        }
     }
     
-         
-    public static function actionCreateBilancio ()
+    public function actionCalcConsAnno()
     {
         $searchModel=new CommonSearch();
-        $searchModel->anno = "2009";
-        BilancioHelper::creaBilancio($searchModel->anno);
-        $bilancio = BilancioHelper::creaArrayPerView($searchModel->anno);
-        $this->render('viewYearTest', array(
-                'searchModel'=>$searchModel,
-                'bilancio'=>$bilancio,
-                )
-        );
-        
+        if (!isset($_POST['CommonSearch'])) {
+            $searchModel->anno = "2009";
+            $this->render('calcYear', array(
+                    'searchModel'=>$searchModel,
+                    )
+            );
+        } else {
+            $searchModel->attributes=$_POST['CommonSearch'];
+            if($searchModel->validate())
+            {
+                BilancioHelper::creaBilancio($searchModel->anno);
+                $bilancio = BilancioHelper::creaArrayPerView($searchModel->anno);
+                $dpRiepCausali = BilancioHelper::getDpRiepCausali($searchModel->anno);
+                $this->render('viewYear', array(
+                        'searchModel'=>$searchModel,
+                        'bilancio'=>$bilancio,
+                        'dpRiepCausali'=>$dpRiepCausali,
+                        )
+                );
+            } else {
+                $this->render('index',array());
+            }
+        }
     }
-        
+
+    public function actionCalcQuote()
+    {
+        $searchModel=new CommonSearch();
+        if (!isset($_POST['CommonSearch'])) {
+            $searchModel->anno = "2009";
+            $this->render('calcYear', array(
+                    'searchModel'=>$searchModel,
+                    )
+            );
+        } else {
+            $searchModel->attributes=$_POST['CommonSearch'];
+            if($searchModel->validate())
+            {
+                CondominiHelper::calcQuote($searchModel->anno);
+                $dpRiepCausali = BilancioHelper::getDpRiepCausali($searchModel->anno);
+                $this->render('viewYear', array(
+                        'searchModel'=>$searchModel,
+                        'bilancio'=>$bilancio,
+                        'dpRiepCausali'=>$dpRiepCausali,
+                        )
+                );
+            } else {
+                $this->render('index',array());
+            }
+        }
+    }
+
 }

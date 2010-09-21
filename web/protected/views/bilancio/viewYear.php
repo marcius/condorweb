@@ -1,166 +1,188 @@
 <?php
 $this->breadcrumbs=array(
-    'Bilancios',
+    'Bilancio',
 );
 
-$this->menu=array(
-    array('label'=>'Bilancio 2009', 'url'=>array('viewYear')),
-    array('label'=>'Create Bilancio', 'url'=>array('create')),
-    array('label'=>'Manage Bilancio', 'url'=>array('admin')),
-);
+$this->menu=SubMenu::bilancio();
+
 ?>
 
-<h1>Bilancio</h1>
+<h1>Bilancio <?php echo $searchModel->anno; ?></h1>
 
-<div class="wide form">
+<h2>Riepilogo per causale</h2>
 
-<?php echo CHtml::beginForm(); ?>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+        'id'=>'placeholders-values',
+        'dataProvider'=>$dpRiepCausali,
+        'columns'=>array(
+            'descrizione:text:Causale',
+            'preventivo:number:Preventivo',
+            'consuntivo:number:Consuntivo',
+            'saldo:number:Saldo',
+    ),
+)); ?>
 
-    <?php echo CHtml::errorSummary($searchModel); ?>
-    <div class="row">
-        <div class="column">
-            <?php echo CHtml::activeLabelEx($searchModel,'anno'); ?>
-            <?php echo CHtml::activeDropDownList($searchModel,'anno', 
-                array('2007'=>'2007', '2008'=>'2008', '2009'=>'2009', '2010'=>'2010'),
-                array('prompt'=>' ')
-                ); ?>
-            <?php echo CHtml::error($searchModel,'anno'); ?>
-        </div>
-    </div>
+<h2>Riepilogo cassa</h2>
 
-<?php echo CHtml::endForm(); ?>
+<!--p><?php print_r($bilancio["cassa"]); ?></p-->
 
-    <div class="row">
-        <div class="column">
-            <button onclick="ShowBilancio();">Elabora bilancio</button>
-        </div>
-    </div>
+<div id="cassa-grid" class="grid-view">
+<table class='items'>
+    <tr><th>Descrizione</th><th>Contanti</th><th>Banca</th><th>Totale</th></tr>
+    <tr>
+        <td>Saldo cassa iniziale</td>
+        <td><?php echo $bilancio["cassa"]["prec_conto_c"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["prec_conto_b"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["prec"]; ?></td>
+    </tr>
+    <tr>
+        <td>Entrate</td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_E_c"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_E_b"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_E"]; ?></td>
+    </tr>
+    <tr>
+        <td>Uscite</td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_U_c"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_U_b"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_U"]; ?></td>
+    </tr>
+    <tr>
+        <td>Giroconti</td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_G_c"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_conto_G_b"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_tipo_G"]; ?></td>
+    </tr>
+    <tr class='summary'>
+        <td>Saldo</td>
+        <td><?php echo $bilancio["cassa"]["tot_conto_c"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot_conto_b"]; ?></td>
+        <td><?php echo $bilancio["cassa"]["tot"]; ?></td>
+    </tr>
+</table>
+</div>
 
+<h2>Riepilogo pagamenti</h2>
 
-    <div class="row">
+<!--p><?php print_r($bilancio["pagam"]); ?></p-->
 
-<br/>  
+<div id="pagam-grid" class="grid-view">
+<table class='items'>
+<tr><th>Descrizione</th><th>Entrate</th><th>Uscite</th><th>Saldo</th></tr>
+    <tr>
+        <td>Totale anni prec.</td>
+        <td><?php echo $bilancio["pagam"]["precnonpag_tipo_E"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["precnonpag_tipo_U"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["precnonpag_tipo_E"]+$bilancio["pagam"]["precnonpag_tipo_U"]; ?></td>
+    </tr>
+    <tr>
+        <td>Pagato anni prec. (c)</td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_E_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_U_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_E_c"]+$bilancio["pagam"]["pag_precnonpag_tipo_conto_U_c"]; ?></td>
+    </tr>
+    <tr>
+        <td>Pagato anni prec. (b)</td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_E_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_U_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_precnonpag_tipo_conto_E_b"]+$bilancio["pagam"]["pag_precnonpag_tipo_conto_U_b"]; ?></td>
+    </tr>
+    <tr>
+        <td>Non pagato anni prec.</td>
+        <td><?php echo $bilancio["pagam"]["nonpag_precnonpag_tipo_E"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["nonpag_precnonpag_tipo_U"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["nonpag_precnonpag_tipo_E"]+$bilancio["pagam"]["nonpag_precnonpag_tipo_U"]; ?></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td>Totale anno corr.</td>
+        <td><?php echo $bilancio["pagam"]["corr_tipo_E"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["corr_tipo_U"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["corr_tipo_E"]+$bilancio["pagam"]["corr_tipo_U"]; ?></td>
+    </tr>
+    <tr>
+        <td>Pagato anno corr. (b)</td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_E_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_U_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_E_b"]+$bilancio["pagam"]["pag_corr_tipo_conto_U_b"]; ?></td>
+    </tr>
+    <tr>
+        <td>Pagato anno corr. (c)</td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_E_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_U_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["pag_corr_tipo_conto_E_c"]+$bilancio["pagam"]["pag_corr_tipo_conto_U_c"]; ?></td>
+    </tr>
+    <tr>
+        <td>Non pagato anno corr.</td>
+        <td><?php echo $bilancio["pagam"]["nonpag_corr_tipo_E"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["nonpag_corr_tipo_U"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["nonpag_corr_tipo_E"]+$bilancio["pagam"]["nonpag_corr_tipo_U"]; ?></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr class='summary'>
+        <td>Totale pagato</td>
+        <td><?php echo $bilancio["pagam"]["tot_conto_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["tot_conto_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["tot"]; ?></td>
+    </tr>
+    <tr class='summary'>
+        <td>Totale non pagato</td>
+        <td><?php echo $bilancio["pagam"]["tot_conto_c"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["tot_conto_b"]; ?></td>
+        <td><?php echo $bilancio["pagam"]["tot"]; ?></td>
+    </tr>
+</table>
 
-<?php $this->widget('ext.jqgrid.CJuiJqGrid', array(
-         'htmlOptions'=>array(
-             'id'=>'riepilogopatrimoniale',
-         ),
-         'navbar'=>false,
-         'options'=>array(
-             //'hiddengrid'=>true,
-             'height'=>'auto',
-             'datatype'=>'json',
-             'colNames'=>array('tipo_transazione','id_cassa', 'sum_importo'), 
-             'colModel'=>array( 
-                array('index'=>'tipo_transazione', 'name'=>'tipo_transazione', 'width'=>'40'),
-                array('index'=>'id_cassa', 'name'=>'id_cassa', 'width'=>'80'),
-                array('index'=>'sum_importo', 'name'=>'sum_importo', 'align'=>'right', 'width'=>'60', 'formatter'=>'number'),
-             ),
-             'rowNum'=>-1,
-             'sortname'=>'tipo_transazione',
-             'sortorder'=>'desc',
-             'caption'=>"Riepilogo patrimoniale",
-            // 'viewrecords'=>false,
-            // 'footerrow' => true,
-            // 'userDataOnFooter' => true,
-             'jsonReader'=>array('repeatitems'=>false, 'id' => "0"),
-         )
-     )
- );
- ?>     
+</div>
 
-    </div>
- </div>
+<h2>Riepilogo patrimoniale</h2>
 
+<!--p><?php print_r($bilancio["patrim"]); ?></p-->
 
- 
-<?php 
+<div id="patrim-grid" class="grid-view">
+<table class='items'>
+        <tr><th>Descrizione</th><th>Attivo</th><th>Passivo</th></tr>
+    <tr>
+        <td>Saldo cassa a fine anno</td>
+        <td><?php echo (($bilancio["patrim"]["saldocassa"] > 0) ? $bilancio["patrim"]["saldocassa"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["saldocassa"] < 0) ? -1*$bilancio["patrim"]["saldocassa"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Saldo cumulativo gestioni prec.</td>
+        <td><?php echo (($bilancio["patrim"]["saldogestioni_prec"] < 0) ? -1*$bilancio["patrim"]["saldogestioni_prec"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["saldogestioni_prec"] > 0) ? $bilancio["patrim"]["saldogestioni_prec"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Crediti/debiti v/condomini prec.</td>
+        <td><?php echo (($bilancio["patrim"]["sit_vcond_prec"] > 0) ? $bilancio["patrim"]["sit_vcond_prec"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["sit_vcond_prec"] < 0) ? -1*$bilancio["patrim"]["sit_vcond_prec"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Crediti/debiti v/condomini corr.</td>
+        <td><?php echo (($bilancio["patrim"]["sit_vcond_corr"] > 0) ? $bilancio["patrim"]["sit_vcond_corr"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["sit_vcond_corr"] < 0) ? -1*$bilancio["patrim"]["sit_vcond_corr"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Crediti/debiti v/fornitori prec.</td>
+        <td><?php echo (($bilancio["patrim"]["sit_vforn_prec"] > 0) ? $bilancio["patrim"]["sit_vforn_prec"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["sit_vforn_prec"] < 0) ? -1*$bilancio["patrim"]["sit_vforn_prec"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Crediti/debiti v/fornitori corr.</td>
+        <td><?php echo (($bilancio["patrim"]["sit_vforn_corr"] > 0) ? $bilancio["patrim"]["sit_vforn_corr"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["sit_vforn_corr"] < 0) ? -1*$bilancio["patrim"]["sit_vforn_corr"] : "") ?></td>
+    </tr>
+    <tr>
+        <td>Risultato di gestione corr.</td>
+        <td><?php echo (($bilancio["patrim"]["risgestione_corr"] < 0) ? -1*$bilancio["patrim"]["risgestione_corr"] : "") ?></td>
+        <td><?php echo (($bilancio["patrim"]["risgestione_corr"] > 0) ? $bilancio["patrim"]["risgestione_corr"] : "") ?></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr class='summary'>
+        <td>Totale a pareggio</td>
+        <td><?php echo $bilancio["patrim"]["tot_pareggio_att"]; ?></td>
+        <td><?php echo $bilancio["patrim"]["tot_pareggio_pas"]; ?></td>
+    </tr>
+</table>
 
-    
-Yii::app()->getClientScript()->registerScript("1",
-    "jQuery('#accounttotals_grid').jqGrid('setGridParam',{
-        onSelectRow : function(id) {
-            doSearchT(id);
-        }
-    });");
-    
-Yii::app()->getClientScript()->registerScript("2",
-    "jQuery('#transactionlist_grid').jqGrid('setGridParam',{
-        jsonReader : {repeatitems: false, id: \"0\" }
-    });");    
-
-Yii::app()->getClientScript()->registerScript("3",
-    "jQuery('#transactionlist_grid').jqGrid('setGridParam',{
-        onSelectRow : function(id) {
-            doSearchP(id);
-        }
-    });");
-?>      
-    
-<script type="text/javascript"> 
-
-function searchTransactions() {
-    toggleGridState('#accounttotals_grid', 'visible');
-    doSearchT(jQuery('#PaymentSearch_account_id').val());
-}
-
-function ShowBilancio() {
-    doSearchB();
-}
-
-function doSearchB(){
-    var search_url = "/index.php?r=bilancio/jsonRiepilogoPatrimoniale"
-        + "&anno=2009&" + jQuery('#Search_anno').val()
-        ;
-//    alert(search_url);
-    jQuery('#riepilogopatrimoniale_grid').jqGrid('setGridParam', {url:search_url, page:1}).trigger('reloadGrid');
-} 
-
-function doSearchT(sel_account_id){
-    //alert(sel_account_id);
-    var search_url = "/index.php?r=statistics/jsonTransactionList"
-        + "&date_from=" + jQuery('#PaymentSearch_date_from').val()
-        + "&date_to=" + jQuery('#PaymentSearch_date_to').val()
-        + "&account_id=" + sel_account_id
-        + "&sign=" + jQuery('#PaymentSearch_sign').val()
-        + "&recipient_subject_id=" + jQuery('#PaymentSearch_recipient_subject_id').val()
-        + "&ref_period_date_to=" + jQuery('#PaymentSearch_ref_period_date_to').val()
-        + "&ref_period_date_from=" + jQuery('#PaymentSearch_ref_period_date_from').val()
-        + "&actual_payer_subject_id=" + jQuery('#PaymentSearch_actual_payer_subject_id').val()
-        + "&expected_payer_subject_id=" + jQuery('#PaymentSearch_expected_payer_subject_id').val()
-        + "&amount_min=" + jQuery('#PaymentSearch_amount_min').val()
-        + "&amount_max=" + jQuery('#PaymentSearch_amount_max').val()
-        + "&counterparty=" + jQuery('#PaymentSearch_counterparty').val()
-        + "&description=" + jQuery('#PaymentSearch_description').val()
-        + "&include_accounts=" + jQuery('#PaymentSearch_include_accounts').val()
-        + "&payment_type_id=" + jQuery('#PaymentSearch_payment_type_id').val()
-        + "&diff_payers=" + jQuery('#PaymentSearch_diff_payers').is(':checked')
-        + "&statement=" + jQuery('#PaymentSearch_statement').val()
-        ;
-//    alert(search_url);
-    jQuery('#transactionlist_grid').jqGrid('setGridParam', {url:search_url, page:1}).trigger('reloadGrid');
-    toggleGridState('#transactionlist_grid', 'hidden');
-    toggleGridState('#paymentlist_grid', 'visible');
-} 
-
-function doSearchP(sel_transaction_id){
-    //alert(sel_account_id);
-    var search_url = "/index.php?r=statistics/jsonPaymentList"
-        + "&transaction_id=" + sel_transaction_id
-        ;
-//    alert(search_url);
-    jQuery('#paymentlist_grid').jqGrid('setGridParam', {url:search_url, page:1}).trigger('reloadGrid');
-    toggleGridState('#paymentlist_grid', 'hidden');
-//    if ($("#paymentlist_grid").jqGrid('getGridParam', 'gridstate') == "hidden") {
-//        $(".HeaderButton", $('#paymentlist_grid')[0].grid.cDiv).trigger("click");
-//    }
-} 
-
-function toggleGridState(grid, state){
-    if ($(grid).jqGrid('getGridParam', 'gridstate') == state) {
-        $(".HeaderButton", $(grid)[0].grid.cDiv).trigger("click");
-    }
-}
-
-</script> 
-
+</div>

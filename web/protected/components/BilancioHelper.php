@@ -1,8 +1,45 @@
 <?php
 class BilancioHelper
 { 
-      public static function creaArraySezionidaDB(&$array, $anno, $sezione)
+
+    public static function getLastYear()
     {
+      $connection = Yii::app()->db;
+      $stmt = BilancioSQLHelper::createStmt_GetLastYear();
+      $valore = $connection->createCommand($stmt)->queryScalar();
+      if (empty($valore)) {
+        return "2008";
+      } else {
+        return $valore;
+      }
+    }
+
+    public static function getDpRiepCausali($anno)
+    {
+      $connection = Yii::app()->db;
+      $stmt = BilancioSQLHelper::createStmt_GetRiepCausali($anno);
+      $rows = $connection->createCommand($stmt)->queryAll();
+      if (empty($rows)) {
+        return new ArrayDataProviderEx2($rows, ArrayDataProviderEx2::ARRAY_EMPTY);
+      } else {
+        return new ArrayDataProviderEx($rows, ArrayDataProviderEx::ARRAY_ORDER);
+      }
+    }
+
+    public static function getDpBilanci()
+    {
+      $connection = Yii::app()->db;
+      $stmt = BilancioSQLHelper::createStmt_GetBilanci();
+      $rows = $connection->createCommand($stmt)->queryAll();
+      if (empty($rows)) {
+        return new ArrayDataProviderEx2($rows, ArrayDataProviderEx2::ARRAY_EMPTY);
+      } else {
+        return new ArrayDataProviderEx($rows, ArrayDataProviderEx::ARRAY_ORDER);
+      }
+    }
+
+     public static function creaArraySezionidaDB(&$array, $anno, $sezione)
+     {
         $connection = Yii::app()->db;
         $stmt = BilancioSQLHelper::createStmt_GetBilancio($anno, $sezione);
         $rows = $connection->createCommand($stmt)->queryAll();
@@ -24,6 +61,11 @@ class BilancioHelper
     public static function creaBilancio ($anno = 2009){
                      
         $connection = Yii::app()->db;
+
+        $stmt = "delete from riep_causali where anno = $anno and sezione = 'cons'";
+        $connection->createCommand($stmt)->execute();
+        $stmt = BilancioSQLHelper::createStmt_InsRiepCausaliCons($anno);
+        $connection->createCommand($stmt)->execute();
 
         $stmt = "delete from bilanci where anno = $anno";
         $connection->createCommand($stmt)->execute();
@@ -108,10 +150,7 @@ class BilancioHelper
         $valore = $connection->createCommand($stmt)->queryScalar();
         $valore = (empty($valore) ? 0 : $valore) + $prec;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>U::cat(array($voce, $elem)), "valore"=>$valore));
-        
-        $voce = "saldocassa"; $sezione = "patrim"; 
-        $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>U::cat(array($voce, $elem)), "valore"=>(empty($valore) ? 0 : $valore)));
-        
+        $saldocassa = $valore;
 
   // 2 - calcoli pagamenti per riepilogo patrimoniale
 
@@ -131,10 +170,12 @@ class BilancioHelper
         //$stmt = BilancioSQLHelper::createStmt_InsTotTipoCassa($anno, $sezione, "pag_precnonpag_tipo_cassa_");
         //$connection->createCommand($stmt)->execute();
         $voce = "pag_precnonpag_tipo_conto"; $sezione = "pagam";
-        foreach ($array_cassa as $elem) {
-            $stmt = BilancioSQLHelper::createStmt_GetTotConto($anno, $sezione, $voce, $elem);
-            $valore = $connection->createCommand($stmt)->queryScalar();
-            $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>U::cat(array($voce, $elem)), "valore"=>(empty($valore) ? 0 : $valore)));
+        foreach ($array_tipo_cassa as $elem) {
+            $stmt = BilancioSQLHelper::createStmt_GetTotTipoConto($anno, $sezione, $voce, $elem);
+            //$valore = $connection->createCommand($stmt)->queryScalar();
+            //$inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>U::cat(array($voce, $elem)), "valore"=>(empty($valore) ? 0 : $valore)));
+            $valore = $connection->createCommand($stmt)->queryScalar(array("tipo_transazione"=>$elem[0], "id_cassa"=>$elem[1]));
+            $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>U::cat(array($voce, $elem[0], $elem[1])), "valore"=>(empty($valore) ? 0 : $valore)));
         }
 
   // riga 4
@@ -195,29 +236,55 @@ class BilancioHelper
   // somma righe 4+8
 
   // 3 - riepilogo patrimoniale
-        $voce = "risgestione_corr"; $sezione = "patrim";
-        $valore = $risgestione;
+        $tot_pareggio_att = 0; $tot_pareggio_pas = 0;
+        $voce = "saldocassa"; $sezione = "patrim";
+        $valore = $saldocassa;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+        $tot_pareggio_att += (($valore > 0) ? $valore : 0);
+        $tot_pareggio_pas += (($valore < 0) ? -1*$valore : 0);
 
-        $voce = "risgestione_prec"; $sezione = "patrim";
-        $stmt = BilancioSQLHelper::createStmt_GetValore($anno-1, $sezione, "risgestione_corr");
+        $voce = "saldogestioni_prec"; $sezione = "patrim";
+        $stmt = BilancioSQLHelper::createStmt_GetTot($anno, $sezione, "saldogestioni_prec");
         $valore = $connection->createCommand($stmt)->queryScalar();
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
-        
+        $tot_pareggio_att += (($valore < 0) ? -1*$valore : 0);
+        $tot_pareggio_pas += (($valore > 0) ? $valore : 0);
+
         $voce = "sit_vcond_corr"; $sezione = "patrim"; $valore = $sit_vcond_corr;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+        $tot_pareggio_att += (($valore > 0) ? $valore : 0);
+        $tot_pareggio_pas += (($valore < 0) ? -1*$valore : 0);
 
         $voce = "sit_vforn_corr"; $sezione = "patrim"; $valore = $sit_vforn_corr;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+        $tot_pareggio_att += (($valore > 0) ? $valore : 0);
+        $tot_pareggio_pas += (($valore < 0) ? -1*$valore : 0);
 
         $voce = "sit_vcond_prec"; $sezione = "patrim"; $valore = $sit_vcond_prec;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+        $tot_pareggio_att += (($valore > 0) ? $valore : 0);
+        $tot_pareggio_pas += (($valore < 0) ? -1*$valore : 0);
 
         $voce = "sit_vforn_prec"; $sezione = "patrim"; $valore = $sit_vforn_prec;
         $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
-       
+        $tot_pareggio_att += (($valore > 0) ? $valore : 0);
+        $tot_pareggio_pas += (($valore < 0) ? -1*$valore : 0);
+
+        $voce = "risgestione_corr"; $sezione = "patrim";
+        $valore = $risgestione;
+        $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+        $tot_pareggio_att += (($valore < 0) ? -1*$valore : 0);
+        $tot_pareggio_pas += (($valore > 0) ? $valore : 0);
+
+        $voce = "tot_pareggio_att"; $sezione = "patrim";
+        $valore = $tot_pareggio_att;
+        $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+
+        $voce = "tot_pareggio_pas"; $sezione = "patrim";
+        $valore = $tot_pareggio_pas;
+        $inscmd->execute(array("anno"=>$anno, "sezione"=>$sezione, "voce"=>$voce, "valore"=>(empty($valore) ? 0 : $valore)));
+
 }
-    
-    
+
 }
 ?>

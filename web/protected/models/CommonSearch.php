@@ -10,10 +10,10 @@ class CommonSearch extends CFormModel
     public function rules()
     {
         return array(
-            array('anno, recipient_subject_id, expected_payer_subject_id, actual_payer_subject_id, amount_min, amount_max', 'numerical'),
-            array('amount_min, amount_max', 'length', 'max'=>10),
-            array('description', 'length', 'max'=>100),
-            array('counterparty', 'length', 'max'=>50),
+            array('anno', 'numerical'),
+            //array('amount_min, amount_max', 'length', 'max'=>10),
+            //array('description', 'length', 'max'=>100),
+            //array('counterparty', 'length', 'max'=>50),
         );
     }
 
@@ -26,9 +26,9 @@ class CommonSearch extends CFormModel
     {
         return array(
             'anno'=>'Anno',
-            'expected_payer_subject_id'=>'Expected payer',
-            'actual_payer_subject_id'=>'Actual payer',
-            'recipient_subject_id'=>'Recipient',
+            //'expected_payer_subject_id'=>'Expected payer',
+            //'actual_payer_subject_id'=>'Actual payer',
+            //'recipient_subject_id'=>'Recipient',
         );
     }
 

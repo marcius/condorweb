@@ -25,14 +25,32 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+	<div id="mainmenumb">
+		<?php //$this->widget('zii.widgets.CMenu',array(
+                      $this->widget('application.extensions.mbmenu.MbMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-                array('label'=>'Bilanci', 'url'=>array('/bilancio/index')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				// array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				// array('label'=>'Contact', 'url'=>array('/site/contact')),
+                                array('label'=>'Archivi', 'url'=>array('/archivi/index'), 'items'=>array(
+                                    array('label'=>'Soggetti', 'url'=>array('/condomini/index')),
+                                    array('label'=>'Tabelle millesimali', 'url'=>array('bilancio/calcQuote')),
+                                    array('label'=>'Conti', 'url'=>array('bilancio/calcConsAnno')),
+                                    )),
+                                array('label'=>'Bilancio', 'url'=>array('/bilancio/index'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+                                    array('label'=>'Gestione preventivo', 'url'=>array('bilancio/gestPrevAnno', 'anno'=>Yii::app()->session['anno'])),
+                                    array('label'=>'Calcola quote', 'url'=>array('bilancio/calcQuote', 'anno'=>Yii::app()->session['anno'])),
+                                    array('label'=>'Calcola consuntivo', 'url'=>array('bilancio/calcConsAnno', 'anno'=>Yii::app()->session['anno'])),
+                                    array('label'=>'Visualizza', 'url'=>array('bilancio/visualizza', 'anno'=>Yii::app()->session['anno'])),
+                                    )),
+                                array('label'=>'Anno di lavoro (' . Yii::app()->session['anno'].')', 'url'=>array('settings/selanno'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+                                    array('label'=>'2010', 'url'=>array('settings/selanno', 'anno'=>'2010')),
+                                    array('label'=>'2009', 'url'=>array('settings/selanno', 'anno'=>'2009')),
+                                    array('label'=>'2008', 'url'=>array('settings/selanno', 'anno'=>'2008')),
+                                    array('label'=>'ante 2008', 'url'=>array('settings/selanno', 'anno'=>'2007')),
+                                    )),
+                                //array('label'=>Yii::app()->session['anno']),
+                                array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
@@ -45,9 +63,7 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Copyright &copy; <?php echo date('Y'); ?> Condominio di via Villoresi 24 interno<br/>
 	</div><!-- footer -->
 
 </div><!-- page -->
