@@ -26,6 +26,18 @@ class BilancioHelper
       }
     }
 
+    public static function getDpFornitoriQuadroAC($anno)
+    {
+      $connection = Yii::app()->db;
+      $stmt = BilancioSQLHelper::createStmt_GetFornitoriQuadroAC($anno);
+      $rows = $connection->createCommand($stmt)->queryAll();
+      if (empty($rows)) {
+        return new ArrayDataProviderEx2($rows, ArrayDataProviderEx2::ARRAY_EMPTY);
+      } else {
+        return new ArrayDataProviderEx($rows, ArrayDataProviderEx::ARRAY_ORDER);
+      }
+    }
+
     public static function getDpBilanci()
     {
       $connection = Yii::app()->db;

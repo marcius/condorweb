@@ -36,11 +36,11 @@ class BilancioController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('calcConsAnno', 'calcQuote','gestPrevAnno','visualizza'),
+				'actions'=>array('visualizza'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete', 'calcConsAnno', 'calcQuote','gestPrevAnno', 'viewFornitoriAC'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -259,6 +259,28 @@ class BilancioController extends Controller
             } else {
                 $this->render('index',array());
             }
+        }
+    }
+
+    public function actionViewFornitoriAC()
+    {
+        $searchModel=new CommonSearch();
+        if(isset(Yii::app()->session['anno'])) {
+            $searchModel->anno=Yii::app()->session['anno'];
+        } else {
+            $searchModel->anno = "2007";
+        }
+
+        if($searchModel->validate())
+        {
+            $dpFornitoriQuadroAC = BilancioHelper::getDpFornitoriQuadroAC($searchModel->anno);
+            $this->render('viewFornitoriQuadroAC', array(
+                    'searchModel'=>$searchModel,
+                    'dpFornitoriQuadroAC'=>$dpFornitoriQuadroAC,
+                    )
+            );
+        } else {
+    		$this->render('index',array());
         }
     }
 

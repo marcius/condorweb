@@ -149,11 +149,22 @@ EOD;
         return $stmt;
     }
 
-        public static function createStmt_GetLastYear(){
+    public static function createStmt_GetLastYear(){
         $where_p = "";
         $stmt = "SELECT max(anno_registrazione) anno from transazioni";
         return $stmt;
     }
-    
+
+    public static function createStmt_GetFornitoriQuadroAC($anno){
+        $where_p = "";
+        $where_p .= U::addwhere("anno_registrazione", "=", $anno);
+        $stmt = <<<EOD
+        SELECT c.nome nome, sum(t.importo) importo FROM transazioni t
+        join controparti c on c.id_controparte = t.id_controparte
+        where  t.tipo_transazione = 'U' $where_p
+        group by t.id_controparte having sum(t.importo) > 258.23;
+EOD;
+        return $stmt;
+    }
 }
 ?>

@@ -33,7 +33,9 @@
 				// array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				// array('label'=>'Contact', 'url'=>array('/site/contact')),
                                 array('label'=>'Archivi', 'url'=>array('/archivi/index'), 'items'=>array(
-                                    array('label'=>'Soggetti', 'url'=>array('/condomini/index')),
+                                    array('label'=>'Transazioni', 'url'=>array('/transazione/admin')),
+                                    array('label'=>'Nuova transazione', 'url'=>array('/transazione/create')),
+                                    array('label'=>'Soggetti', 'url'=>array('/soggetto/admin')),
                                     array('label'=>'Tabelle millesimali', 'url'=>array('bilancio/calcQuote')),
                                     array('label'=>'Conti', 'url'=>array('bilancio/calcConsAnno')),
                                     )),
@@ -42,6 +44,7 @@
                                     array('label'=>'Calcola quote', 'url'=>array('bilancio/calcQuote', 'anno'=>Yii::app()->session['anno'])),
                                     array('label'=>'Calcola consuntivo', 'url'=>array('bilancio/calcConsAnno', 'anno'=>Yii::app()->session['anno'])),
                                     array('label'=>'Visualizza', 'url'=>array('bilancio/visualizza', 'anno'=>Yii::app()->session['anno'])),
+                                    array('label'=>'Fornitori Quadro AC', 'url'=>array('bilancio/viewFornitoriAC', 'anno'=>Yii::app()->session['anno'])),
                                     )),
                                 array('label'=>'Anno di lavoro (' . Yii::app()->session['anno'].')', 'url'=>array('settings/selanno'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
                                     array('label'=>'2010', 'url'=>array('settings/selanno', 'anno'=>'2010')),
