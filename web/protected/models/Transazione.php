@@ -124,8 +124,12 @@ class Transazione extends CActiveRecord
 		$criteria->compare('data_pagam',$this->data_pagam,true);
 		$criteria->compare('des_pagam',$this->des_pagam,true);
 
-		return new CActiveDataProvider(get_class($this), array(
+		$dataProvider = new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
+                //$dataProvider=$x->search();
+                $dataProvider->pagination = false; //->pageSize=9999;
+                return $dataProvider;
+
 	}
 }

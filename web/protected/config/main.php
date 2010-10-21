@@ -16,13 +16,23 @@ return array(
         'application.components.*',
         'application.extensions.arraydataproviderex.*',
         'application.extensions.yiidebugtb.*',
+        'application.modules.user.models.*',
+        'application.modules.user.components.*',
+       // 'application.modules.rights.components.*',
+
     ),
     // application components
     'components' => array(
         'user' => array(
             // enable cookie-based authentication
+            //'class'=>'RightsWebUser', // Allows super users access implicitly.
             'allowAutoLogin' => true,
+            'loginUrl' => array('/user/login'),
         ),
+    'authManager'=>array(
+        'class'=>'CPhpAuthManager', // Provides support authorization item sorting.
+        ),
+
         // uncomment the following to enable URLs in path-format
         /*
           'urlManager'=>array(
@@ -41,6 +51,7 @@ return array(
             'charset' => 'utf8',
             'enableParamLogging' => true,
             'emulatePrepare' => true,
+            'tablePrefix' => ''
         ),
         // uncomment the following to use a MySQL database
         /*
@@ -84,6 +95,10 @@ return array(
         'adminEmail' => 'webmaster@example.com',
     ),
     'modules' => array(
+        'user',
+        //'rights'=>array(
+        //    'install'=>true, // Enables the installer.
+        //),
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => 'gii',

@@ -73,8 +73,8 @@ class SettingsController extends Controller
         if(isset($_GET['anno'])) {
             $newanno=$_GET['anno'];
             $session['anno'] = $newanno;
-            $this->redirect(Yii::app()->user->returnUrl);
-            //$this->render('view',array());
+            //$this->redirect(Yii::app()->user->returnUrl);
+            $this->redirect('/');
         } else {
             $dpBilanci = BilancioHelper::getDpBilanci();
             $this->render('selanno', array(
