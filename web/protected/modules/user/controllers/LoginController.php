@@ -17,11 +17,10 @@ class LoginController extends Controller
 				$model->attributes=$_POST['UserLogin'];
 				// validate user input and redirect to previous page if valid
 				if($model->validate()) {
-					$this->lastViset();
-					if ('/index.php')
-						$this->redirect(Yii::app()->controller->module->returnUrl);
-					else
-						$this->redirect(Yii::app()->user->returnUrl);
+					//$this->lastViset();
+                                        $session = Yii::app()->session; //TODO: Added by marcius
+                                        $session['anno'] = BilCalcHelper::getLastYear(); //TODO: Added by marcius
+					$this->redirect(Yii::app()->user->returnUrl);
 				}
 			}
 			// display the login form

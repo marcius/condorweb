@@ -36,12 +36,12 @@ class BilCalcController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('visualizza', 'viewRiepTransazioniPerCausale'),
+				'actions'=>array('visualizza', 'viewRendSpeseCassa', 'viewRendSpeseComp', 'viewRendQuote'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete', 'calcConsAnno', 'calcQuote','gestPrevAnno', 'viewFornitoriAC'),
-				'users'=>array('admin'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -230,7 +230,7 @@ class BilCalcController extends Controller
                         )
                 );
             } else {
-                $this->render('index',array());
+                $this->redirect('/');
             }
         }
     }
@@ -284,7 +284,63 @@ class BilCalcController extends Controller
         }
     }
 
-    public function actionViewRiepTransazioniPerCausale()
+    public function actionViewRendSpeseCassa()
+    {
+        $model=new TransazioneEx();
+        $model->tipo_transazione = "U";
+        if(isset(Yii::app()->session['anno'])) {
+            $model->anno_registrazione=Yii::app()->session['anno'];
+        } else {
+            $model->anno_registrazione = "2007";
+        }
+
+        if($model->validate())
+        {
+            $titolo = 'Rendiconto per cassa ' . $model->anno_registrazione;
+            $dpRiepTransazioniPerCausale = $model->pr_cassa()->search();
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepSpese($model->anno_registrazione);
+            $dpRiepSpese = new CSqlDataProvider($stmt, array('pagination'=>false)) ;
+            $this->render('viewRendSpese', array(
+                    'model'=>$model,
+                    'titolo'=>$titolo,
+                    'dpRiepSpese'=>$dpRiepSpese,
+                    'dpRiepTransazioniPerCausale'=>$dpRiepTransazioniPerCausale,
+                    )
+            );
+        } else {
+                $this->redirect('/');
+        }
+    }
+
+    public function actionViewRendSpeseComp()
+    {
+        $model=new TransazioneEx();
+        $model->tipo_transazione = "U";
+        if(isset(Yii::app()->session['anno'])) {
+            $model->anno_registrazione=Yii::app()->session['anno'];
+        } else {
+            $model->anno_registrazione = "2007";
+        }
+
+        if($model->validate())
+        {
+            $titolo = 'Rendiconto per competenza ' . $model->anno_registrazione;
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepCausali($model->anno_registrazione, "U");
+            $dpRiepSpese = new CSqlDataProvider($stmt, array('pagination'=>false)) ;
+            $dpRiepTransazioniPerCausale = $model->pr_comp()->search();
+            $this->render('viewRendSpese', array(
+                    'model'=>$model,
+                    'titolo'=>$titolo,
+                    'dpRiepSpese'=>$dpRiepSpese,
+                    'dpRiepTransazioniPerCausale'=>$dpRiepTransazioniPerCausale,
+                    )
+            );
+        } else {
+                $this->redirect('/');
+        }
+    }
+
+    public function actionViewRendQuote()
     {
         $searchModel=new CommonSearch();
         if(isset(Yii::app()->session['anno'])) {
@@ -295,23 +351,17 @@ class BilCalcController extends Controller
 
         if($searchModel->validate())
         {
-            $stmt = BilCalcSQLHelper::createStmt_GetRiepTransazioniPerCausale($searchModel->anno);
-            //$stmt = "select Transazione.* from transazioni Transazione";
-            $dpRiepTransazioniPerCausale = TransazioneEx::listByYear($searchModel->anno);
-            //$dataProvider = new CActiveDataProvider(get_class($this);
-            //$dpRiepTransazioniPerCausale->getData();
-
-            //$dpRiepTransazioniPerCausale = BilCalcHelper::getDpRiepTransazioniPerCausale($searchModel->anno);
-            $this->render('viewRiepTransazioniPerCausale', array(
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepQuote($searchModel->anno);
+            $config = array();
+            $dpRiepQuote = new CSqlDataProvider($stmt, $config) ;
+            $this->render('viewRendQuote', array(
                     'searchModel'=>$searchModel,
-                    'dpRiepTransazioniPerCausale'=>$dpRiepTransazioniPerCausale,
+                    'dpRiepQuote'=>$dpRiepQuote,
                     )
             );
         } else {
     		$this->render('index',array());
         }
     }
-
-
 
 }

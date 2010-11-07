@@ -6,7 +6,7 @@ class AdminController extends Controller
 	
 	private $_model;
 
-        public $layout='application.views.layouts.column2';
+        public $layout='application.views.layouts.column2'; //TODO: Added by marcius
 
 	/**
 	 * @return array action filters

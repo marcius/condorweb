@@ -7,7 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
-        public $role;
+        public $role; //TODO: Added by marcius
 	private $_id;
 	const ERROR_EMAIL_INVALID=3;
 	const ERROR_STATUS_NOTACTIV=4;
@@ -43,11 +43,6 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$user->id;
 			$this->username=$user->username;
 			$this->errorCode=self::ERROR_NONE;
-                        // begin marcello
-                        //$auth = Yii::app()->authManager;
-                        //$auth->assign("admin", $user->id); //$user->role
-                        //$auth->save();
-                        // end marcello
 		}
 		return !$this->errorCode;
 	}

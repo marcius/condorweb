@@ -25,13 +25,6 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 .large {font-size:1.1em;}
 .quiet {color:#999;}
 .hide {display:none;}
-/*
 a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
 a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
-*/
-#mainmenumb, #mainmenu, #header, #sidebar {display:none;}
-td.button-column {display:none;}
-#yiiWebDebugToolbar, #yiiWebDebugPanel {display:none;}
-.breadcrumbs, .actions {display:none;}
-.span-19 {width:100%;}
-.summary {display:none;}
+

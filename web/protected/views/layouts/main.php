@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/custom.css" />
 </head>
 
 <body>
@@ -28,41 +29,7 @@
 	<div id="mainmenumb">
 		<?php //$this->widget('zii.widgets.CMenu',array(
                       $this->widget('application.extensions.mbmenu.MbMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				// array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				// array('label'=>'Contact', 'url'=>array('/site/contact')),
-                                array('label'=>'Archivi', 'url'=>array('/archivi/index'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
-                                    array('label'=>'Transazioni', 'url'=>array('/transazione/admin')),
-                                    array('label'=>'Nuova transazione', 'url'=>array('/transazione/create')),
-                                    array('label'=>'Soggetti', 'url'=>array('/soggetto/admin')),
-                                    array('label'=>'Tabelle millesimali', 'url'=>array('/archivi/index')),
-                                    array('label'=>'Conti', 'url'=>array('/archivi/index')),
-                                    )),
-                                array('label'=>'Bilancio', 'url'=>array('/bilCalc/index'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
-                                    array('label'=>'Visualizza', 'url'=>array('/bilCalc/visualizza', 'anno'=>Yii::app()->session['anno'])),
-                                    array('label'=>'Transazioni', 'url'=>array('/bilCalc/viewRiepTransazioniPerCausale', 'anno'=>Yii::app()->session['anno'])),
-                                    //array('label'=>'Gestione preventivo', 'url'=>array('/bilancio/gestPrevAnno', 'anno'=>Yii::app()->session['anno'])),
-                                    //array('label'=>'Calcola quote', 'url'=>array('/bilancio/calcQuote', 'anno'=>Yii::app()->session['anno'])),
-                                    array('label'=>'Calcola consuntivo', 'url'=>array('/bilCalc/calcConsAnno', 'anno'=>Yii::app()->session['anno'])),
-                                    array('label'=>'Fornitori Quadro AC', 'url'=>array('/bilCalc/viewFornitoriAC', 'anno'=>Yii::app()->session['anno'])),
-                                    )),
-                                array('label'=>'Anno di lavoro (' . Yii::app()->session['anno'].')', 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
-                                    array('label'=>'2010', 'url'=>array('/settings/selanno', 'anno'=>'2010')),
-                                    array('label'=>'2009', 'url'=>array('/settings/selanno', 'anno'=>'2009')),
-                                    array('label'=>'2008', 'url'=>array('/settings/selanno', 'anno'=>'2008')),
-                                    array('label'=>'ante 2008', 'url'=>array('/settings/selanno', 'anno'=>'2007')),
-                                    )),
-                                //array('label'=>Yii::app()->session['anno']),
-                                //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-                                //array('label'=>'Account', 'items'=>array(
-                                    array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
-                                    array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
-                                    array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"), 'visible'=>!Yii::app()->user->isGuest),
-                                    array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>Yii::app()->getModule('user')->t("Logout").' ('.Yii::app()->user->name.')', 'visible'=>!Yii::app()->user->isGuest),
-                                //    )),
-                            ),
+			'items'=>MainMenu::getItems(),
 		)); ?>
 	</div><!-- mainmenu -->
 

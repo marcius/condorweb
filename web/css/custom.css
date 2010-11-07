@@ -1,0 +1,26 @@
+.grid-view table.items td.al-right
+{
+    text-align: right;
+}
+
+@media print {
+#mainmenumb, #mainmenu, #header, #sidebar {display:none;}
+td.button-column {display:none;}
+#yiiWebDebugToolbar, #yiiWebDebugPanel {display:none;}
+.breadcrumbs, .actions {display:none;}
+.span-19 {width:100%;}
+/*.summary {display:none;}*/
+table.items tr.filters {display:none;}
+a.search-button {display:none;}
+div.search-form {display:none;}
+a:link, a:visited {background:inherit; font-weight:inherit; text-decoration:none;}
+a:link:after, a:visited:after {content:""; font-size:100%;}
+.grid-view table.items th, .grid-view table.items td { border: 1px solid black; }
+.grid-view table.items th, .grid-view table.items th a { color: black; background: lightyellow; font-weight: bold; }
+.grid-view table.items tr.odd, .grid-view table.items tr.even {background:inherit; font-weight:inherit; text-decoration:none;}
+}
+
+@media screen {
+
+}
+

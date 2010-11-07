@@ -136,15 +136,16 @@ EOD;
         return $stmt;
     }
 
-    public static function createStmt_GetRiepCausali($anno){
-        $where_p = "";
+    public static function createStmt_GetRiepCausali($anno, $tipo = null){
+        $where_p = ""; $where_ca = "";
         $where_p .= U::addwhere("anno", "=", $anno);
+        $where_ca .= U::addwhere("ca.tipo", "=", $tipo, "string");
         $stmt = <<<EOD
-        SELECT ca.tipo, ca.descrizione, ifnull(p.valore, 0) preventivo, ifnull(c.valore, 0) consuntivo, (ifnull(p.valore, 0) - ifnull(c.valore, 0))*ca.segno*-1 saldo
+        SELECT ca.id_causale id, ca.tipo, ca.descrizione, ifnull(p.valore, 0) preventivo, ifnull(c.valore, 0) consuntivo, (ifnull(p.valore, 0) - ifnull(c.valore, 0))*ca.segno*-1 saldo
         from causali ca
         left join (select * from riep_causali where sezione = "cons" $where_p) c on ca.id_causale = c.id_causale
         left join (select * from riep_causali where sezione = "prev" $where_p) p on ca.id_causale = p.id_causale
-        where ca.tipo <> "G" order by ca.tipo, ca.descrizione;
+        where ca.tipo <> "G" $where_ca order by ca.tipo, ca.descrizione;
 EOD;
         return $stmt;
     }
@@ -167,9 +168,10 @@ EOD;
         return $stmt;
     }
 
-    public static function createStmt_GetRiepTransazioniPerCausale($anno){
+    public static function createStmt_GetRiepTransazioniPerCausale($anno, $tipo = null){
         $where_p = "";
         $where_p .= U::addwhere("anno_registrazione", "=", $anno);
+        $where_p .= U::addwhere("tipo_transazione", "=", $tipo);
         $stmt = <<<EOD
         select * from (SELECT anno_registrazione, tipo_transazione, id_causale, id_cassa, id_controparte, descrizione, importo, data_doc, riferim_doc, data_pagam, des_pagam FROM cond.transazioni tr
         union
@@ -181,8 +183,72 @@ EOD;
         return $stmt;
     }
 
+public static function createStmt_GetRiepQuote($anno){
+        $stmt = <<<EOD
+        select t.anno_registrazione, t.id_controparte, c.nome,
+          -- ifnull(tp.quote,0) tot_quote_prec, ifnull(pp.versamenti,0) tot_versamenti_prec,
+          (ifnull(tp.quote,0)-ifnull(pp.versamenti,0)) saldo_prec,
+          ifnull(t.quote,0) tot_quote_corr, ifnull(p.versamenti,0) tot_versamenti_corr,
+          -- (ifnull(t.quote,0)-ifnull(p.versamenti,0)) saldo_corr,
+          (ifnull(t.quote,0)-ifnull(p.versamenti,0)+ifnull(tp.quote,0)-ifnull(pp.versamenti,0)) saldo_tot
+        from controparti c
 
+        left join (
+          select t1.anno_registrazione, t1.id_controparte, sum(t1.importo) quote from transazioni t1
+          where t1.id_causale = 'q' and t1.anno_registrazione < $anno
+          group by t1.id_controparte
+        ) tp on c.id_controparte = tp.id_controparte
 
+        left join (
+          select t2.anno_registrazione, t2.id_controparte, sum(p1.importo) versamenti from
+          transazioni t2 left join pagamenti p1 on t2.id_transazione = p1.id_transazione
+          where t2.id_causale = 'q' and year(p1.data_pagam) < $anno
+          group by t2.id_controparte
+        ) pp on c.id_controparte = pp.id_controparte
+
+        left join (
+          select t1.anno_registrazione, t1.id_controparte, sum(t1.importo) quote from transazioni t1
+          where t1.id_causale = 'q' and t1.anno_registrazione = $anno
+          group by t1.id_controparte
+        ) t on c.id_controparte = t.id_controparte
+
+        left join (
+          select t2.anno_registrazione, t2.id_controparte, sum(p1.importo) versamenti from
+          transazioni t2 left join pagamenti p1 on t2.id_transazione = p1.id_transazione
+          where t2.id_causale = 'q' and year(p1.data_pagam) = $anno
+          group by t2.id_controparte
+        ) p on c.id_controparte = p.id_controparte
+        where c.tipo = 'c'
+        ;
+EOD;
+        return $stmt;
+    }
+
+public static function createStmt_GetRiepSpese($anno){
+        $stmt = <<<EOD
+        select c.id_causale, c.descrizione,
+          ifnull(pr.valore,0) preventivo,
+          ifnull(co.sum_importo,0) consuntivo,
+          (ifnull(co.sum_importo,0)-ifnull(pr.valore,0)) saldo
+        from causali c
+
+        left join (
+          SELECT id_causale, valore
+          FROM riep_causali r
+          where anno = $anno and sezione = 'prev' and tipo_transazione = 'U'
+        ) pr on c.id_causale = pr.id_causale
+
+        left join (
+          select t2.anno_registrazione, t2.id_causale, sum(p1.importo) sum_importo from
+          transazioni t2 left join pagamenti p1 on t2.id_transazione = p1.id_transazione
+          where year(p1.data_pagam) = $anno
+          group by t2.id_causale
+        ) co on c.id_causale = co.id_causale
+        where c.tipo = 'U' order by c.descrizione
+        ;
+EOD;
+        return $stmt;
+    }
 
 }
 ?>
