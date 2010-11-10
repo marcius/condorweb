@@ -6,12 +6,12 @@
 // CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    //'name'=>'Condominio di via Villoresi 24 interno',
-    'name' => 'Test',
+    'name'=>'Condominio di via Villoresi 24 interno',
+    //'name' => 'Test',
     // preloading 'log' component
     'preload' => array('log'),
-    'sourceLanguage' => 'it_it',
-    //'language' => 'it_it',
+    'sourceLanguage' => 'en_us',
+    'language' => 'it',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -94,7 +94,7 @@ return array(
     // using Yii::app()->params['paramName']
     'params' => array(
         // this is used in contact page
-        'adminEmail' => 'webmaster@example.com',
+        'adminEmail' => 'condor@emmecubo.net',
     ),
     'modules' => array(
         'user',

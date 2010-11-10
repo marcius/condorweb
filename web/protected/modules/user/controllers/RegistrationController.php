@@ -40,6 +40,7 @@ class RegistrationController extends Controller
 						$model->createtime=time();
 						$model->lastvisit=((Yii::app()->controller->module->loginNotActiv||(Yii::app()->controller->module->activeAfterRegister&&Yii::app()->controller->module->sendActivationMail==false))&&Yii::app()->controller->module->autoLogin)?time():0;
 						$model->superuser=0;
+						$model->role='normal'; //TODO: marcius
 						$model->status=((Yii::app()->controller->module->activeAfterRegister)?User::STATUS_ACTIVE:User::STATUS_NOACTIVE);
 						
 						if ($model->save()) {
