@@ -13,37 +13,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
---
--- Create schema cond
---
-
-CREATE DATABASE IF NOT EXISTS cond;
-USE cond;
-
---
--- Temporary table structure for view `transazioniex`
---
-DROP TABLE IF EXISTS `transazioniex`;
-DROP VIEW IF EXISTS `transazioniex`;
-CREATE TABLE `transazioniex` (
-  `rowtype` varchar(7),
-  `id` varbinary(27),
-  `id_transazione` int(11) unsigned,
-  `anno_competenza` bigint(20) unsigned,
-  `anno_registrazione` int(11) unsigned,
-  `tipo_transazione` varchar(5),
-  `id_causale` varchar(5),
-  `id_cassa` varchar(5),
-  `id_controparte` int(11),
-  `descrizione` varchar(100),
-  `importo` decimal(32,2),
-  `data_doc` date,
-  `riferim_doc` varchar(20),
-  `data_pagam` date,
-  `des_pagam` varchar(20)
-);
-
 --
 -- Definition of table `bilanci`
 --
@@ -780,7 +749,7 @@ INSERT INTO `users` (`id`,`username`,`password`,`email`,`activkey`,`createtime`,
 
 DROP TABLE IF EXISTS `transazioniex`;
 DROP VIEW IF EXISTS `transazioniex`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `transazioniex` AS select 'D' AS `rowtype`,concat(`tr`.`id_transazione`) AS `id`,`tr`.`id_transazione` AS `id_transazione`,`tr`.`anno_competenza` AS `anno_competenza`,`tr`.`anno_registrazione` AS `anno_registrazione`,`tr`.`tipo_transazione` AS `tipo_transazione`,`tr`.`id_causale` AS `id_causale`,`p`.`id_cassa` AS `id_cassa`,`tr`.`id_controparte` AS `id_controparte`,`tr`.`descrizione` AS `descrizione`,`p`.`importo` AS `importo`,`tr`.`data_doc` AS `data_doc`,`tr`.`riferim_doc` AS `riferim_doc`,`p`.`data_pagam` AS `data_pagam`,`p`.`des_pagam` AS `des_pagam` from (`transazioni` `tr` join `pagamenti` `p` on((`tr`.`id_transazione` = `p`.`id_transazione`))) union (select 'T-COMP' AS `rowtype`,concat_ws('_',`tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) AS `id`,NULL AS `id_transazione`,`tot`.`anno_registrazione` AS `anno_competenza`,`tot`.`anno_registrazione` AS `anno_registrazione`,`tot`.`tipo_transazione` AS `tipo_transazione`,`tot`.`id_causale` AS `id_causale`,NULL AS `id_cassa`,NULL AS `id_controparte`,concat(' TOTALE PER ',`tot`.`id_causale`) AS `descrizione`,sum(`p`.`importo`) AS `importo`,NULL AS `data_doc`,NULL AS `riferim_doc`,NULL AS `data_pagam`,NULL AS `des_pagam` from (`transazioni` `tot` join `pagamenti` `p` on((`tot`.`id_transazione` = `p`.`id_transazione`))) group by `tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) union (select 'T-CASSA' AS `rowtype`,concat_ws('_',`tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) AS `id`,NULL AS `id_transazione`,year(`p`.`data_pagam`) AS `anno_competenza`,`tot`.`anno_registrazione` AS `anno_registrazione`,`tot`.`tipo_transazione` AS `tipo_transazione`,`tot`.`id_causale` AS `id_causale`,NULL AS `id_cassa`,NULL AS `id_controparte`,concat(' TOTALE PER ',`tot`.`id_causale`) AS `descrizione`,sum(`p`.`importo`) AS `importo`,NULL AS `data_doc`,NULL AS `riferim_doc`,NULL AS `data_pagam`,NULL AS `des_pagam` from (`transazioni` `tot` join `pagamenti` `p` on((`tot`.`id_transazione` = `p`.`id_transazione`))) group by year(`p`.`data_pagam`),`tot`.`tipo_transazione`,`tot`.`id_causale`);
+CREATE VIEW `transazioniex` AS select 'D' AS `rowtype`,concat(`tr`.`id_transazione`) AS `id`,`tr`.`id_transazione` AS `id_transazione`,`tr`.`anno_competenza` AS `anno_competenza`,`tr`.`anno_registrazione` AS `anno_registrazione`,`tr`.`tipo_transazione` AS `tipo_transazione`,`tr`.`id_causale` AS `id_causale`,`p`.`id_cassa` AS `id_cassa`,`tr`.`id_controparte` AS `id_controparte`,`tr`.`descrizione` AS `descrizione`,`p`.`importo` AS `importo`,`tr`.`data_doc` AS `data_doc`,`tr`.`riferim_doc` AS `riferim_doc`,`p`.`data_pagam` AS `data_pagam`,`p`.`des_pagam` AS `des_pagam` from (`transazioni` `tr` join `pagamenti` `p` on((`tr`.`id_transazione` = `p`.`id_transazione`))) union (select 'T-COMP' AS `rowtype`,concat_ws('_',`tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) AS `id`,NULL AS `id_transazione`,`tot`.`anno_registrazione` AS `anno_competenza`,`tot`.`anno_registrazione` AS `anno_registrazione`,`tot`.`tipo_transazione` AS `tipo_transazione`,`tot`.`id_causale` AS `id_causale`,NULL AS `id_cassa`,NULL AS `id_controparte`,concat(' TOTALE PER ',`tot`.`id_causale`) AS `descrizione`,sum(`p`.`importo`) AS `importo`,NULL AS `data_doc`,NULL AS `riferim_doc`,NULL AS `data_pagam`,NULL AS `des_pagam` from (`transazioni` `tot` join `pagamenti` `p` on((`tot`.`id_transazione` = `p`.`id_transazione`))) group by `tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) union (select 'T-CASSA' AS `rowtype`,concat_ws('_',`tot`.`anno_registrazione`,`tot`.`tipo_transazione`,`tot`.`id_causale`) AS `id`,NULL AS `id_transazione`,year(`p`.`data_pagam`) AS `anno_competenza`,`tot`.`anno_registrazione` AS `anno_registrazione`,`tot`.`tipo_transazione` AS `tipo_transazione`,`tot`.`id_causale` AS `id_causale`,NULL AS `id_cassa`,NULL AS `id_controparte`,concat(' TOTALE PER ',`tot`.`id_causale`) AS `descrizione`,sum(`p`.`importo`) AS `importo`,NULL AS `data_doc`,NULL AS `riferim_doc`,NULL AS `data_pagam`,NULL AS `des_pagam` from (`transazioni` `tot` join `pagamenti` `p` on((`tot`.`id_transazione` = `p`.`id_transazione`))) group by year(`p`.`data_pagam`),`tot`.`tipo_transazione`,`tot`.`id_causale`);
 
 
 
