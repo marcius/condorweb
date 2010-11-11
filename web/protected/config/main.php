@@ -17,7 +17,7 @@ return array(
         'application.models.*',
         'application.components.*',
         'application.extensions.arraydataproviderex.*',
-        'application.extensions.yiidebugtb.*',
+        //'application.extensions.yiidebugtb.*',
         'application.modules.user.models.*',
         'application.modules.user.components.*',
        // 'application.modules.rights.components.*',
@@ -47,24 +47,14 @@ return array(
           ),
          */
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=cond',
-            'username' => 'root',
-            'password' => '',
+            'connectionString' => 'mysql:host=localhost;dbname=emmecubo_condo1',
+            'username' => 'emmecubo_condo',
+            'password' => 'CondO5',
             'charset' => 'utf8',
             'enableParamLogging' => true,
             'emulatePrepare' => true,
             'tablePrefix' => ''
         ),
-        // uncomment the following to use a MySQL database
-        /*
-          'db'=>array(
-          'connectionString' => 'mysql:host=localhost;dbname=testdrive',
-          'emulatePrepare' => true,
-          'username' => 'root',
-          'password' => '',
-          'charset' => 'utf8',
-          ),
-         */
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
@@ -76,11 +66,13 @@ return array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
                 ),
+				/*
                 array(
                   'class'=>'XWebDebugRouter',
                   'config'=>'alignLeft, opaque, runInDebug, fixedPos',
                   'levels'=>'error, warning, trace, profile, info'
                 ),
+				*/
             // uncomment the following to show log messages on web pages
             /*
               array(
