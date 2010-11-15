@@ -39,14 +39,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_cassa'); ?>
-                <?php echo $form->dropDownList($model,'id_cassa',
-                    CHtml::listData(Cassa::model()->findAll(),'id_cassa','descrizione')
-                    ); ?>
-		<?php echo $form->error($model,'id_cassa'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'id_controparte'); ?>
                 <?php echo $form->dropDownList($model,'id_controparte',
                     CHtml::listData(Soggetto::model()->ordinati()->findAll(/*'tipo=:tipo', array(':tipo'=>'c')*/),
@@ -85,25 +77,6 @@
 		<?php echo $form->labelEx($model,'riferim_doc'); ?>
 		<?php echo $form->textField($model,'riferim_doc',array('size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'riferim_doc'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'data_pagam'); ?>
-                <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                        'model'=>$model,
-                        'attribute'=>'data_pagam',
-                        'options'=>array(
-                            'dateFormat'=>'yy-mm-dd',
-                        ),
-                    ));
-                 ?>
-		<?php echo $form->error($model,'data_pagam'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'des_pagam'); ?>
-		<?php echo $form->textField($model,'des_pagam',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'des_pagam'); ?>
 	</div>
 
 	<div class="row buttons">

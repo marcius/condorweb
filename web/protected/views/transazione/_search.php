@@ -31,11 +31,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_cassa'); ?>
-		<?php echo $form->textField($model,'id_cassa',array('size'=>5,'maxlength'=>5)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'id_controparte'); ?>
 		<?php echo $form->textField($model,'id_controparte'); ?>
 	</div>
@@ -63,16 +58,6 @@
 	<div class="row">
 		<?php echo $form->label($model,'riferim_doc'); ?>
 		<?php echo $form->textField($model,'riferim_doc',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'data_pagam'); ?>
-		<?php echo $form->textField($model,'data_pagam'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'des_pagam'); ?>
-		<?php echo $form->textField($model,'des_pagam',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row buttons">

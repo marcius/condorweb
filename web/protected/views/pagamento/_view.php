@@ -8,10 +8,6 @@
 	<?php echo CHtml::encode($data->id_transazione); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('anno_competenza')); ?>:</b>
-	<?php echo CHtml::encode($data->anno_competenza); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id_cassa')); ?>:</b>
 	<?php echo CHtml::encode($data->id_cassa); ?>
 	<br />

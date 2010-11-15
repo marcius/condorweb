@@ -38,15 +38,15 @@ class Pagamento extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('anno_competenza, importo, des_pagam, id_pagamento', 'required'),
-            array('id_transazione, anno_competenza, importo', 'length', 'max' => 10),
+            array('id_transazione, importo, id_cassa, data_pagam', 'required'),
+            array('id_transazione, importo', 'length', 'max' => 10),
             array('id_cassa', 'length', 'max' => 5),
             array('des_pagam', 'length', 'max' => 20),
             array('id_pagamento', 'length', 'max' => 11),
             array('data_pagam', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id_transazione, anno_competenza, id_cassa, importo, data_pagam, des_pagam, id_pagamento', 'safe', 'on' => 'search'),
+            array('id_transazione, id_cassa, importo, data_pagam, des_pagam, id_pagamento', 'safe', 'on' => 'search'),
         );
     }
 
@@ -112,4 +112,15 @@ class Pagamento extends CActiveRecord {
         ));
     }
 
+    public static function searchPerAnno($year) {
+
+        $criteria = new CDbCriteria;
+        $criteria->with = array('transazione');
+        $criteria->compare('year(t.data_pagam)', $year, false);
+        $criteria->order = "t.data_pagam";
+        return new CActiveDataProvider('Pagamento', array(
+            'criteria' => $criteria,
+            'pagination' => false,
+        ));
+    }
 }

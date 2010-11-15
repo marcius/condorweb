@@ -250,5 +250,92 @@ EOD;
         return $stmt;
     }
 
+    public static function createStmt_GetRiepCassa($anno){
+        $stmt = <<<EOD
+        select b1.descrizione, b1.importo banca, c1.importo contanti, t1.importo totale
+        from (
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) < $anno and id_cassa = 'b'
+        ) b1
+        left join (
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) < $anno and id_cassa = 'c'
+        ) c1 using (descrizione)
+        left join (
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) < $anno
+        ) t1 using (descrizione)
+        union all
+        select b1.descrizione, b1.importo b, c1.importo c, t1.importo t from (
+        select 'Entrate' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'b' and tipo_transazione = 'E'
+        ) b1
+        left join (
+        select 'Entrate' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'c'  and tipo_transazione = 'E'
+        ) c1 using (descrizione)
+        left join (
+        select 'Entrate' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno  and tipo_transazione = 'E'
+        ) t1 using(descrizione)
+        union all
+        select b1.descrizione, b1.importo b, c1.importo c, t1.importo t from (
+        select 'Uscite' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'b' and tipo_transazione = 'U'
+        ) b1
+        left join (
+        select 'Uscite' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'c'  and tipo_transazione = 'U'
+        ) c1 using (descrizione)
+        left join (
+        select 'Uscite' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno  and tipo_transazione = 'U'
+        ) t1 using(descrizione)
+        union all
+        select b1.descrizione, b1.importo b, c1.importo c, t1.importo t from (
+        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'b' and tipo_transazione = 'G'
+        ) b1
+        left join (
+        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno and id_cassa = 'c'  and tipo_transazione = 'G'
+        ) c1 using (descrizione)
+        left join (
+        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) = $anno  and tipo_transazione = 'G'
+        ) t1 using(descrizione)
+        union all
+        select b1.descrizione, b1.importo b, c1.importo c, t1.importo t from (
+        select 'Saldo finale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) <= $anno and id_cassa = 'b'
+        ) b1
+        left join (
+        select 'Saldo finale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) <= $anno and id_cassa = 'c'
+        ) c1 using (descrizione)
+        left join (
+        select 'Saldo finale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
+        where year(p.data_pagam) <= $anno
+        ) t1 using(descrizione)
+EOD;
+        return $stmt;
+    }
+
+
 }
 ?>

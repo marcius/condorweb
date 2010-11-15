@@ -9,17 +9,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_transazione'); ?>
-		<?php echo $form->textField($model,'id_transazione',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'id_transazione'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'anno_competenza'); ?>
-		<?php echo $form->textField($model,'anno_competenza',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'anno_competenza'); ?>
-	</div>
+        <?php echo CHtml::activeHiddenField($model,'id_transazione'); ?>
+        <?php echo CHtml::activeHiddenField($model,'id_pagamento'); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_cassa'); ?>

@@ -50,11 +50,11 @@ class Transazione extends CActiveRecord
 		return array(
 			array('tipo_transazione, anno_registrazione, anno_competenza, descrizione, importo, id_cassa', 'required'),
 			array('id_controparte', 'numerical', 'integerOnly'=>true),
-			array('tipo_transazione, id_causale, id_cassa', 'length', 'max'=>5),
+			array('tipo_transazione, id_causale', 'length', 'max'=>5),
 			array('anno_registrazione, anno_competenza, importo', 'length', 'max'=>10),
 			array('descrizione', 'length', 'max'=>100),
-			array('riferim_doc, des_pagam', 'length', 'max'=>20),
-			array('data_doc, data_pagam', 'safe'),
+			array('riferim_doc', 'length', 'max'=>20),
+			array('data_doc', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id_transazione, tipo_transazione, anno_registrazione, anno_competenza, id_causale, id_cassa, id_controparte, controparte, cassa, causale, descrizione, importo, data_doc, riferim_doc, data_pagam, des_pagam', 'safe', 'on'=>'search'),
@@ -69,7 +69,7 @@ class Transazione extends CActiveRecord
 		return array(
 			'causale' => array(self::BELONGS_TO, 'Causale', 'id_causale'),
 			'controparte' => array(self::BELONGS_TO, 'Soggetto', 'id_controparte'),
-			'cassa' => array(self::BELONGS_TO, 'Cassa', 'id_cassa'),
+			'pagamenti' => array(self::HAS_MANY, 'Pagamento', 'id_transazione'),
                     );
 	}
 
@@ -84,14 +84,11 @@ class Transazione extends CActiveRecord
 			'anno_registrazione' => 'Anno Registrazione',
 			'anno_competenza' => 'Anno Competenza',
 			'id_causale' => 'Id Causale',
-			'id_cassa' => 'Id Cassa',
 			'id_controparte' => 'Id Controparte',
 			'descrizione' => 'Descrizione',
 			'importo' => 'Importo',
 			'data_doc' => 'Data Doc',
 			'riferim_doc' => 'Riferim Doc',
-			'data_pagam' => 'Data Pagam',
-			'des_pagam' => 'Des Pagam',
 		);
 	}
 
@@ -106,29 +103,23 @@ class Transazione extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-                $criteria->with = array('cassa', 'causale', 'controparte');
+                $criteria->with = array('causale', 'controparte');
 		$criteria->compare('id_transazione',$this->id_transazione,true);
 		$criteria->compare('tipo_transazione',$this->tipo_transazione,true);
 		$criteria->compare('anno_registrazione',$this->anno_registrazione,true);
 		$criteria->compare('anno_competenza',$this->anno_competenza,true);
-		//$criteria->compare('id_causale',$this->id_causale,true);
 		$criteria->compare('causale.id_causale',$this->causale);
-		//$criteria->compare('id_controparte',$this->id_controparte);
 		$criteria->compare('controparte.id_controparte',$this->controparte);
 		$criteria->compare('descrizione',$this->descrizione,true);
 		$criteria->compare('importo',$this->importo,true);
-		//$criteria->compare('id_cassa',$this->id_cassa,true);
-		$criteria->compare('cassa.id_cassa',$this->cassa);
+//		$criteria->compare('cassa.id_cassa',$this->cassa);
 		$criteria->compare('data_doc',$this->data_doc,true);
 		$criteria->compare('riferim_doc',$this->riferim_doc,true);
-		$criteria->compare('data_pagam',$this->data_pagam,true);
-		$criteria->compare('des_pagam',$this->des_pagam,true);
 
 		$dataProvider = new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
-                //$dataProvider=$x->search();
-                $dataProvider->pagination = false; //->pageSize=9999;
+                //$dataProvider->pagination = false; //->pageSize=9999;
                 return $dataProvider;
 
 	}

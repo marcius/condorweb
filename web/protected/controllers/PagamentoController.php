@@ -29,7 +29,7 @@ class PagamentoController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'viewRendQuote'),
+                'actions' => array('create', 'update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -57,15 +57,14 @@ class PagamentoController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+        if (!isset($_GET['id_transazione']))
+            throw new CHttpException(400, 'Invalid request. Missing transaction context.');
         $model = new Pagamento;
-
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
+        $model->id_transazione = $_GET['id_transazione'];
         if (isset($_POST['Pagamento'])) {
             $model->attributes = $_POST['Pagamento'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id_pagamento));
+                $this->redirect(array('transazione/view', 'id' => $model->id_transazione));
         }
 
         $this->render('create', array(
@@ -147,7 +146,7 @@ class PagamentoController extends Controller {
 
         if ($searchModel->validate()) {
             $stmt = BilCalcSQLHelper::createStmt_GetRiepQuote($searchModel->anno);
-            $config = array('pagination'=>false);
+            $config = array('pagination' => false);
             $dpRiepQuote = new CSqlDataProvider($stmt, $config);
             $dpPagamentiQuote = Pagamento::searchQuotePerAnno($searchModel->anno);
             $this->render('viewRendQuote', array(
@@ -156,6 +155,29 @@ class PagamentoController extends Controller {
                 'dpPagamentiQuote' => $dpPagamentiQuote,
                     )
             );
+        } else {
+            $this->render('index', array());
+        }
+    }
+
+    public function actionViewRendCassa() {
+        $searchModel = new CommonSearch();
+        if (isset(Yii::app()->session['anno'])) {
+            $searchModel->anno = Yii::app()->session['anno'];
+        } else {
+            $searchModel->anno = "2007";
+        }
+
+        if ($searchModel->validate()) {
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepCassa($searchModel->anno);
+            $config = array();
+            $dpRiepCassa = new CSqlDataProvider($stmt, $config);
+            $dpPagamentiQuote = Pagamento::searchPerAnno($searchModel->anno);
+            $this->render('viewRendCassa', array(
+                'searchModel' => $searchModel,
+                'dpRiepCassa' => $dpRiepCassa,
+                'dpPagamentiQuote' => $dpPagamentiQuote,
+            ));
         } else {
             $this->render('index', array());
         }

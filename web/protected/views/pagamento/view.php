@@ -19,7 +19,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id_transazione',
-		'anno_competenza',
+		//'anno_competenza',
 		'id_cassa',
 		'importo',
 		'data_pagam',

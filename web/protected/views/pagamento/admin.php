@@ -43,7 +43,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id_transazione',
-		'anno_competenza',
+		//'anno_competenza',
 		'id_cassa',
 		'importo',
 		'data_pagam',

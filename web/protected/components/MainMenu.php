@@ -5,7 +5,7 @@ class MainMenu {
     public static function getItemsArchivi() {
         return array(
             array('label' => 'Nuova transazione', 'url' => array('/transazione/create')),
-            array('label' => 'Transazioni', 'url' => array('/transazione/admin')),
+            array('label' => 'Transazioni', 'url' => array('/transazione/admin', 'Transazione[anno_registrazione]'=> Yii::app()->session['anno'])),
             array('label' => 'Soggetti', 'url' => array('/soggetto/admin')),
             array('label' => 'Tabelle millesimali', 'url' => array('/archivi/index')),
             array('label' => 'Conti', 'url' => array('/archivi/index')),
@@ -14,9 +14,10 @@ class MainMenu {
 
     public static function getItemsRendiconto() {
         return array(
-            array('label' => 'Quote condominiali', 'url' => array('/pagamento/viewRendQuote', 'anno' => Yii::app()->session['anno'])),
-            array('label' => 'Spese per cassa', 'url' => array('/bilCalc/viewRendSpeseCassa', 'anno' => Yii::app()->session['anno'])),
-            array('label' => 'Spese per competenza', 'url' => array('/bilCalc/viewRendSpeseComp', 'anno' => Yii::app()->session['anno'])),
+            array('label' => 'Cassa', 'url' => array('/rendiconto/viewRendCassa', 'anno' => Yii::app()->session['anno'])),
+            array('label' => 'Quote condominiali', 'url' => array('/rendiconto/viewRendQuote', 'anno' => Yii::app()->session['anno'])),
+            array('label' => 'Spese per cassa', 'url' => array('/rendiconto/viewRendSpeseCassa', 'anno' => Yii::app()->session['anno'])),
+            array('label' => 'Spese per competenza', 'url' => array('/rendiconto/viewRendSpeseComp', 'anno' => Yii::app()->session['anno'])),
         );
     }
 
@@ -47,7 +48,7 @@ class MainMenu {
             // array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
             // array('label'=>'Contact', 'url'=>array('/site/contact')),
             array('label' => 'Archivi', 'visible' => $a, 'items' => MainMenu::getItemsArchivi()),
-            array('label' => 'Rendiconto', 'url' => array('/bilCalc/index'), 'visible' => !$g, 'items' => MainMenu::getItemsRendiconto()),
+            array('label' => 'Rendiconto', 'visible' => !$g, 'items' => MainMenu::getItemsRendiconto()),
             array('label' => 'Procedure', 'url' => array('/bilCalc/index'), 'visible' => $a, 'items' => MainMenu::getItemsProcedure()),
             array('label' => 'Anno di lavoro (' . Yii::app()->session['anno'] . ')', 'visible' => !$g, 'items' => MainMenu::getItemsAnnoLavoro()),
             array('label' => Yii::app()->getModule('user')->t("Register"), 'visible' => $g, 'url' => Yii::app()->getModule('user')->registrationUrl),

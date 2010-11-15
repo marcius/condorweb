@@ -11,11 +11,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'anno_competenza'); ?>
-		<?php echo $form->textField($model,'anno_competenza',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'id_cassa'); ?>
 		<?php echo $form->textField($model,'id_cassa',array('size'=>5,'maxlength'=>5)); ?>
 	</div>
