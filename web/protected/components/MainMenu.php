@@ -49,7 +49,7 @@ class MainMenu {
             // array('label'=>'Contact', 'url'=>array('/site/contact')),
             array('label' => 'Archivi', 'visible' => $a, 'items' => MainMenu::getItemsArchivi()),
             array('label' => 'Rendiconto', 'visible' => !$g, 'items' => MainMenu::getItemsRendiconto()),
-            array('label' => 'Procedure', 'url' => array('/bilCalc/index'), 'visible' => $a, 'items' => MainMenu::getItemsProcedure()),
+            array('label' => 'Procedure', 'visible' => $a, 'items' => MainMenu::getItemsProcedure()),
             array('label' => 'Anno di lavoro (' . Yii::app()->session['anno'] . ')', 'visible' => !$g, 'items' => MainMenu::getItemsAnnoLavoro()),
             array('label' => Yii::app()->getModule('user')->t("Register"), 'visible' => $g, 'url' => Yii::app()->getModule('user')->registrationUrl),
             array('label' => Yii::app()->getModule('user')->t("Login"), 'visible' => $g, 'url' => Yii::app()->getModule('user')->loginUrl),
