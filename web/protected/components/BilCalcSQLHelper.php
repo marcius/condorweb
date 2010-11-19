@@ -302,17 +302,17 @@ EOD;
         ) t1 using(descrizione)
         union all
         select b1.descrizione, b1.importo b, c1.importo c, t1.importo t from (
-        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Giroconti' descrizione, sum(p.importo) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) = $anno and id_cassa = 'b' and tipo_transazione = 'G'
         ) b1
         left join (
-        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Giroconti' descrizione, sum(p.importo) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) = $anno and id_cassa = 'c'  and tipo_transazione = 'G'
         ) c1 using (descrizione)
         left join (
-        select 'Giroconti' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Giroconti' descrizione, sum(p.importo) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) = $anno  and tipo_transazione = 'G'
         ) t1 using(descrizione)
