@@ -254,17 +254,17 @@ EOD;
         $stmt = <<<EOD
         select b1.descrizione, b1.importo banca, c1.importo contanti, t1.importo totale
         from (
-        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q' or t.id_causale = 'g', 1, -1)) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) < $anno and id_cassa = 'b'
         ) b1
         left join (
-        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q' or t.id_causale = 'g', 1, -1)) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) < $anno and id_cassa = 'c'
         ) c1 using (descrizione)
         left join (
-        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q', 1, -1)) importo
+        select 'Saldo iniziale' descrizione, sum(p.importo*if(t.id_causale = 'q' or t.id_causale = 'g', 1, -1)) importo
         from  transazioni t left join pagamenti p on t.id_transazione = p.id_transazione
         where year(p.data_pagam) < $anno
         ) t1 using (descrizione)
