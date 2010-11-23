@@ -48,7 +48,7 @@ class Transazione extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tipo_transazione, anno_registrazione, anno_competenza, descrizione, importo, id_cassa', 'required'),
+			array('tipo_transazione, anno_registrazione, anno_competenza, descrizione, importo', 'required'),
 			array('id_controparte', 'numerical', 'integerOnly'=>true),
 			array('tipo_transazione, id_causale', 'length', 'max'=>5),
 			array('anno_registrazione, anno_competenza, importo', 'length', 'max'=>10),
@@ -57,7 +57,7 @@ class Transazione extends CActiveRecord
 			array('data_doc', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_transazione, tipo_transazione, anno_registrazione, anno_competenza, id_causale, id_cassa, id_controparte, controparte, cassa, causale, descrizione, importo, data_doc, riferim_doc, data_pagam, des_pagam', 'safe', 'on'=>'search'),
+			array('id_transazione, tipo_transazione, anno_registrazione, anno_competenza, id_causale, id_controparte, controparte, cassa, causale, descrizione, importo, data_doc, riferim_doc', 'safe', 'on'=>'search'),
 		);
 	}
 
