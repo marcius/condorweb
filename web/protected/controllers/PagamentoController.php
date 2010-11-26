@@ -160,30 +160,7 @@ class PagamentoController extends Controller {
         }
     }
 
-    public function actionViewRendCassa() {
-        $searchModel = new CommonSearch();
-        if (isset(Yii::app()->session['anno'])) {
-            $searchModel->anno = Yii::app()->session['anno'];
-        } else {
-            $searchModel->anno = "2007";
-        }
-
-        if ($searchModel->validate()) {
-            $stmt = BilCalcSQLHelper::createStmt_GetRiepCassa($searchModel->anno);
-            $config = array();
-            $dpRiepCassa = new CSqlDataProvider($stmt, $config);
-            $dpPagamentiQuote = Pagamento::searchPerAnno($searchModel->anno);
-            $this->render('viewRendCassa', array(
-                'searchModel' => $searchModel,
-                'dpRiepCassa' => $dpRiepCassa,
-                'dpPagamentiQuote' => $dpPagamentiQuote,
-            ));
-        } else {
-            $this->render('index', array());
-        }
-    }
-
-    /**
+     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer the ID of the model to be loaded

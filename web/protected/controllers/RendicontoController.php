@@ -33,7 +33,7 @@ class RendicontoController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array(),
+                'actions' => array('viewRendCassaPeriodo'),
                 'roles' => array('admin'),
             ),
             array('deny', // deny all users
@@ -75,10 +75,27 @@ class RendicontoController extends Controller {
         }
 
         if ($searchModel->validate()) {
-            $stmt = BilCalcSQLHelper::createStmt_GetRiepCassa($searchModel->anno);
+            //$stmt = BilCalcSQLHelper::createStmt_GetRiepCassa($searchModel->anno);
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepCassa($searchModel->anno.'-01-01', $searchModel->anno.'-12-31');
             $config = array();
             $dpRiepCassa = new CSqlDataProvider($stmt, $config);
             $dpPagamentiQuote = Pagamento::searchPerAnno($searchModel->anno);
+            $this->render('viewRendCassa', array(
+                'searchModel' => $searchModel,
+                'dpRiepCassa' => $dpRiepCassa,
+                'dpPagamentiQuote' => $dpPagamentiQuote,
+            ));
+        } else {
+            $this->render('index', array());
+        }
+    }
+
+    public function actionViewRendCassaPeriodo() {
+        if (true) {
+            $stmt = BilCalcSQLHelper::createStmt_GetRiepCassa(U::q('data_da'), U::q('data_a'));
+            $config = array();
+            $dpRiepCassa = new CSqlDataProvider($stmt, $config);
+            $dpPagamentiQuote = Pagamento::searchPerPeriodo(U::q('data_da'), U::q('data_a'));
             $this->render('viewRendCassa', array(
                 'searchModel' => $searchModel,
                 'dpRiepCassa' => $dpRiepCassa,

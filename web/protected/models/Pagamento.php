@@ -123,4 +123,16 @@ class Pagamento extends CActiveRecord {
             'pagination' => false,
         ));
     }
+    public static function searchPerPeriodo($data_da, $data_a) {
+
+        $criteria = new CDbCriteria;
+        $criteria->with = array('transazione');
+        $criteria->compare('t.data_pagam', '>='.$data_da, false);
+        $criteria->compare('t.data_pagam', '<='.$data_a, false);
+        $criteria->order = "t.data_pagam";
+        return new CActiveDataProvider('Pagamento', array(
+            'criteria' => $criteria,
+            'pagination' => false,
+        ));
+    }
 }
