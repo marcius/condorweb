@@ -3,11 +3,11 @@
 if(UserModule::isAdmin()) {
 ?>
 <li><?php echo CHtml::link(UserModule::t('Manage User'),array('/user/admin')); ?></li>
-<?php 
+<?php /*
 } else {
 ?>
 <li><?php echo CHtml::link(UserModule::t('List User'),array('/user')); ?></li>
-<?php
+<?php*/
 }
 ?>
 <li><?php echo CHtml::link(UserModule::t('Profile'),array('/user/profile')); ?></li>

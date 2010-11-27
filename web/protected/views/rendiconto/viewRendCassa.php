@@ -60,6 +60,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'labelExpression'=>'$data->id_transazione',
             'urlExpression'=>'Yii::app()->createUrl("transazione/view",array("id"=>$data->id_transazione))',
             'linkHtmlOptions'=>array('target'=>'_blank', 'title'=>'Visualizza transazione'),
+            'visible'=>Yii::app()->user->checkAccess('admin', array(), true),
         ),
     ),
 )); ?>

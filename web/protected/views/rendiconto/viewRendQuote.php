@@ -58,5 +58,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
         'cassa.descrizione:text:Cassa',
         'des_pagam:text:Note',
+        array(
+            'class'=>'CLinkColumn',
+            'header'=>'ID',
+            'labelExpression'=>'$data->id_transazione',
+            'urlExpression'=>'Yii::app()->createUrl("transazione/view",array("id"=>$data->id_transazione))',
+            'linkHtmlOptions'=>array('target'=>'_blank', 'title'=>'Visualizza transazione'),
+            'visible'=>Yii::app()->user->checkAccess('admin', array(), true),
+        ),
     ),
 )); ?>
