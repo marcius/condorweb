@@ -36,7 +36,7 @@ class MainMenu {
             array('label' => '2010', 'url' => array('/settings/selanno', 'anno' => '2010')),
             array('label' => '2009', 'url' => array('/settings/selanno', 'anno' => '2009')),
             array('label' => '2008', 'url' => array('/settings/selanno', 'anno' => '2008')),
-            array('label' => 'ante 2008', 'url' => array('/settings/selanno', 'anno' => '2007')),
+            //array('label' => 'ante 2008', 'url' => array('/settings/selanno', 'anno' => '2007')),
         );
     }
 
