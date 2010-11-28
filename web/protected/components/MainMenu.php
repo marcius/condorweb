@@ -40,6 +40,13 @@ class MainMenu {
         );
     }
 
+    public static function getItemsProfilo() {
+        return array(
+            array('label' => 'Visualizza', 'url' => Yii::app()->getModule('user')->profileUrl),
+            array('label' => 'Cambia password', 'url' => array('/user/profile/changepassword')),
+        );
+    }
+
     public static function getItems() {
         $g = Yii::app()->user->isGuest;
         $a = Yii::app()->user->checkAccess('admin', array(), true);
@@ -53,7 +60,7 @@ class MainMenu {
             array('label' => 'Anno di lavoro (' . Yii::app()->session['anno'] . ')', 'visible' => !$g, 'items' => MainMenu::getItemsAnnoLavoro()),
             array('label' => Yii::app()->getModule('user')->t("Register"), 'visible' => $g, 'url' => Yii::app()->getModule('user')->registrationUrl),
             array('label' => Yii::app()->getModule('user')->t("Login"), 'visible' => $g, 'url' => Yii::app()->getModule('user')->loginUrl),
-            array('label' => Yii::app()->getModule('user')->t("Profile"), 'visible' => !$g, 'url' => Yii::app()->getModule('user')->profileUrl),
+            array('label' => Yii::app()->getModule('user')->t("Profile"), 'visible' => !$g, 'items' => MainMenu::getItemsProfilo()),
             array('label' => Yii::app()->getModule('user')->t("Logout") . ' (' . Yii::app()->user->name . ')', 'visible' => !$g, 'url' => Yii::app()->getModule('user')->logoutUrl),
         );
         return $menu;

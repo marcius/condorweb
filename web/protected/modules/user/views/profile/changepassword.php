@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 ?>
 
 <h2><?php echo UserModule::t("Change password"); ?></h2>
-<?php echo $this->renderPartial('menu'); ?>
+<?php //echo $this->renderPartial('menu'); ?>
 
 <div class="form">
 <?php echo CHtml::beginForm(); ?>
